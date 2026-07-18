@@ -18,24 +18,25 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 
 ## World generation
 
-- [ ] Identify the current mechanism that selects superflat generation.
-- [ ] Define the new deep-flat overworld preset.
-- [ ] Confirm stone and deepslate depth supports mining and structures.
-- [ ] Enable vanilla and modded ore placement in flat chunks.
-- [ ] Preserve villages and selected surface structures.
-- [ ] Add visible long-range landmarks.
+- [~] Identify the current mechanism that selects superflat generation.
+- [~] Define and select the new data-driven deep-flat overworld preset.
+- [~] Provide 64 deepslate layers, 60 stone layers, soil, and a level surface.
+- [~] Enable biome features so vanilla and modded ore placement can participate in flat chunks.
+- [~] Preserve villages, mineshafts, pillager outposts, ruined portals, and strongholds.
+- [ ] Add visible long-range landmarks beyond the selected vanilla structures.
 - [ ] Add or preserve shallow water, marsh, crater, trench, and sinkhole features.
 - [ ] Establish common and regional deposit rules.
 - [ ] Add an early prospecting route.
 - [ ] Add improved mid-game surveying.
 - [ ] Test Nether and End access and generation.
-- [ ] Document whether the worldgen overhaul requires a new save.
+- [~] Warn that the worldgen overhaul is new-save content until migration is validated.
 
 ## Quest campaign
 
 - [~] Create the Proper Horizon campaign group.
 - [~] Relabel original overview chapters as legacy progression.
 - [~] Relabel mod-by-mod chapters as reference manuals.
+- [~] Add the Read This First orientation chapter.
 - [~] Act 0: The First Horizon.
 - [~] Act I: The Mechanical Age.
 - [~] Act II: Lines Across the Plain.
@@ -44,8 +45,8 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 - [~] Act V: The Engineered Horizon.
 - [ ] Validate every cross-chapter dependency.
 - [ ] Remove or redirect contradictory legacy quests.
-- [ ] Ensure every mandatory quest explains its acquisition route.
-- [ ] Remove mandatory item-catalogue quests from the campaign.
+- [~] Give every new mandatory quest an explicit purpose and acquisition explanation.
+- [~] Keep individual item catalogues out of the Proper Horizon campaign.
 - [ ] Audit rewards for sequence-breaking items.
 
 ## Early survival
@@ -55,16 +56,16 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 - [~] Give the player limited food and lighting.
 - [ ] Confirm Mega Torch radius and recipe/config behavior.
 - [ ] Confirm the starter kit cannot be reclaimed infinitely.
-- [ ] Add a short explanation of local safety versus frontier danger.
+- [~] Explain local safety versus frontier danger.
 - [ ] Test multiplayer/team reward behavior.
 
 ## Resource economy
 
 - [ ] Build a complete required-material dependency graph.
 - [ ] Classify each material as common, regional, exceptional, or synthetic.
-- [ ] Ensure every material has a non-circular bootstrap route.
-- [ ] Restore mining as the primary early source of common ores.
-- [ ] Convert sifting from universal ore generation to trace recovery/bootstrap support.
+- [~] Establish non-circular bootstrap routes for stone, first iron, water, and lava.
+- [~] Restore mining as the intended primary early source of common ores through Deep Flat worldgen.
+- [~] Convert gravel and deepslate sifting from universal ore generation to trace recovery/bootstrap support.
 - [ ] Gate bees, crops, void miners, and laser drills behind prior resource discovery.
 - [ ] Prevent wandering traders from being the only mandatory source.
 - [ ] Prevent village trades from bypassing major technology tiers.
@@ -76,15 +77,16 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 ### Create
 
 - [~] Assign as the primary early mechanical and logistics system.
-- [ ] Rebalance sifting and mechanical extruder output.
+- [~] Rebalance sifting away from universal ore generation.
+- [ ] Rebalance mechanical extruder output.
 - [ ] Validate andesite, brass, blaze burner, and precision mechanism routes.
-- [ ] Make trains part of required progression.
+- [~] Make trains, stations, schedules, freight, and signals part of required progression.
 
 ### Immersive Engineering
 
 - [~] Assign first electrical grid and visible heavy infrastructure.
 - [ ] Validate generator, wire, transformer, steel, and multiblock routes.
-- [ ] Prevent trivial replacement by immediate compact wireless systems.
+- [~] Put the first visible electrical grid before compact Mekanism integration.
 
 ### Thermal
 
@@ -95,9 +97,10 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 ### Mekanism
 
 - [~] Assign advanced ore processing, gases, chemistry, and high-energy systems.
-- [ ] Gate the Digital Miner behind surveying and regional development.
+- [~] Keep the Digital Miner recipe disabled until surveying and regional development are validated.
+- [ ] Design the eventual Digital Miner research and recipe gate.
 - [ ] Validate steel, alloys, gases, and ore-processing tiers.
-- [ ] Prevent early power blocks from erasing the first grid.
+- [~] Place Mekanism after the first Immersive Engineering grid in the campaign.
 
 ### Ender IO
 
@@ -113,18 +116,19 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 ### Storage and control
 
 - [~] Assign AE2 as the primary advanced network and autocrafting path.
-- [~] Keep Refined Storage as an alternative rather than a duplicate required tree.
+- [~] Keep Refined Storage as an optional alternative rather than a duplicate required tree.
 - [~] Assign Integrated Dynamics and Modular Routers to logic/local automation.
-- [ ] Gate long-range wireless transfer until after physical freight progression.
+- [~] Gate campaign wireless access until after physical freight progression.
 - [ ] Audit Functional and Sophisticated Storage rewards and recipes.
 
 ### GregTech
 
 - [~] Move conceptual role to late advanced engineering.
-- [ ] Identify all GregTech chapter prerequisites.
-- [ ] Remove any requirement to replay the opening resource ladder in isolation.
-- [ ] Integrate existing mining, power, chemistry, logistics, and storage into its entry tier.
-- [ ] Define continental endgame projects.
+- [~] Identify the existing GregTech getting-started chain and its legacy dependencies.
+- [~] Replace the campaign entry with a continuation of existing steel, power, logistics, and automation.
+- [~] Integrate bronze, steam compression, refractory materials, and the primitive blast furnace without demanding a second opening game.
+- [~] Define continental endgame projects.
+- [ ] Rebalance the full GregTech reference tree around that entry point.
 
 ### Optional systems
 
@@ -140,21 +144,23 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 - [~] Add campaign requirement for a remote outpost.
 - [~] Add campaign requirement for a freight railway.
 - [ ] Define regional deposits and structure rewards.
-- [ ] Add surveying and map tools to progression.
-- [ ] Require first discovery and development before teleport linking.
+- [~] Add compass, map, spyglass, and a manual survey milestone.
+- [~] Require discovery, development, and a freight run before optional teleport linking.
 - [ ] Add night or frontier events worth confronting.
-- [ ] Add settlement/outpost supply expectations.
+- [~] Add minimum shelter, storage, food, processing, and lighting expectations for the first outpost.
 - [ ] Test train chunk-loading and multiplayer behavior.
 
 ## Interface and onboarding
 
-- [ ] Update title screen and pack branding.
+- [~] Rename the KubeJS display and login message to Proper Infinite Horizons.
+- [ ] Replace or safely rework the inherited FancyMenu title screen after client launch testing.
 - [ ] Replace upstream wiki links that no longer describe progression.
-- [ ] Ensure the new campaign opens first.
-- [ ] Add a concise “How this world works” guide.
-- [ ] Add warnings for legacy chapters.
+- [~] Put the Proper Horizon Campaign first in chapter-group order.
+- [~] Add a concise Read This First guide.
+- [~] Label the original progression and mod guides as legacy/reference material.
 - [ ] Audit JEI categories and hidden items.
 - [ ] Audit default keybind conflicts.
+- [~] Remove the obsolete login warning about upstream version 13.1 mod removals.
 - [ ] Reduce redundant books and onboarding popups.
 
 ## Performance and maintenance
