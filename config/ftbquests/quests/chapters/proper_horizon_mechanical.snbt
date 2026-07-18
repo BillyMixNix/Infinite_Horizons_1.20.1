@@ -1,0 +1,154 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_mechanical"
+	group: "511DB7CE6F25D05C"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "create:wrench"
+	id: "57F6E6E7DCD8380D"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6ABFBD9BF94386A9"]
+			description: [
+				"Create is the first real technology tier because it teaches power, motion, processing, and material flow in a form you can see."
+				"Make andesite alloy. It is the standard structural material for the mechanical workshop, not merely another checkbox."
+			]
+			id: "D00F54F4F5A28A27"
+			tasks: [{ id: "F7497F677646D8BA", item: "create:andesite_alloy", type: "item" }]
+			title: "The Mechanical Standard"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D00F54F4F5A28A27"]
+			description: ["Apply andesite alloy to stripped logs to make andesite casing. Casings define the first machine tier and should be produced in batches."]
+			id: "B70C147C75D960AB"
+			rewards: [{ count: 4, id: "37B5659ECAA49BEA", item: "create:shaft", type: "item" }]
+			tasks: [{ id: "A2AD8C168216E7C1", item: "create:andesite_casing", type: "item" }]
+			title: "Machine Frames"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["B70C147C75D960AB"]
+			description: [
+				"Install a water wheel and learn to read rotational speed and stress. A machine that turns is not automatically a machine with enough capacity."
+				"Build the workshop around a visible power spine so later expansions remain understandable."
+			]
+			id: "46A784FDD3FEFE57"
+			rewards: [
+				{ id: "0A4B3F4A2B63D883", item: "create:goggles", type: "item" }
+				{ id: "63C642C5712FC780", item: "create:wrench", type: "item" }
+			]
+			tasks: [
+				{ id: "186B98DE71693633", item: "create:water_wheel", type: "item" }
+				{ id: "CB7C498FBC0BBED3", item: "create:stressometer", type: "item" }
+			]
+			title: "Power You Can See"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["46A784FDD3FEFE57"]
+			description: ["The millstone and mechanical press create the first repeatable processing floor. Route items through them instead of hand-feeding every operation forever."]
+			id: "8B98F29DD03500AB"
+			tasks: [
+				{ id: "65DE8B7DDEB35297", item: "create:millstone", type: "item" }
+				{ id: "9D271462A4AA39B7", item: "create:mechanical_press", type: "item" }
+			]
+			title: "The Processing Floor"
+			x: 3.0d
+			y: -0.75d
+		}
+		{
+			dependencies: ["8B98F29DD03500AB"]
+			description: [
+				"Mixing combines ingredients under controlled conditions. Encased fans turn air into washing, smoking, blasting, and haunting processes."
+				"These are general capabilities. Build stations you can reuse rather than one-off contraptions for individual quests."
+			]
+			id: "D8CB3D1C29ECD5A6"
+			tasks: [
+				{ id: "84AC935DC0DF6201", item: "create:mechanical_mixer", type: "item" }
+				{ id: "7095053FA382C406", item: "create:encased_fan", type: "item" }
+			]
+			title: "Controlled Conditions"
+			x: 4.0d
+			y: -0.75d
+		}
+		{
+			dependencies: ["46A784FDD3FEFE57"]
+			description: ["Production becomes a system when materials move without your inventory. Establish belts, chutes, and bulk storage between machines."]
+			id: "930E7AE8658209DC"
+			tasks: [
+				{ id: "6F76D0A1B36F77AD", item: "create:belt_connector", type: "item" }
+				{ id: "3A31FE69F4A4B053", item: "create:chute", type: "item" }
+				{ id: "6B5E52FD038F4D86", item: "create:item_vault", type: "item" }
+			]
+			title: "Material Flow"
+			x: 3.0d
+			y: 0.75d
+		}
+		{
+			dependencies: [
+				"D8CB3D1C29ECD5A6"
+				"930E7AE8658209DC"
+			]
+			description: [
+				"Brass marks the transition from bulk mechanics to precision machinery. Capture and heat a blaze burner, mix brass, and produce a brass casing."
+				"This is a real tier boundary: the workshop should already process and move materials before you cross it."
+			]
+			id: "9262C24E1341E10D"
+			tasks: [
+				{ id: "B4DA220AD8582E91", item: "create:blaze_burner", type: "item" }
+				{ id: "197975472EAF4E43", item: "create:brass_casing", type: "item" }
+			]
+			title: "The Brass Threshold"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["9262C24E1341E10D"]
+			description: ["Assemble a precision mechanism through sequenced assembly. It proves that the workshop can coordinate multiple operations rather than simply run isolated machines."]
+			id: "F2588FEA98D75143"
+			tasks: [{ id: "67EEB1B1F837D4D7", item: "create:precision_mechanism", type: "item" }]
+			title: "Sequenced Precision"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["F2588FEA98D75143"]
+			description: ["Deployers perform controlled player-like actions, while drills turn rotation into excavation. Build both before trying to automate the entire horizon."]
+			id: "7EA61FB4041AD8B5"
+			tasks: [
+				{ id: "F818499FC4F1B78F", item: "create:deployer", type: "item" }
+				{ id: "4A53D9124F00D1C1", item: "create:mechanical_drill", type: "item" }
+			]
+			title: "Hands and Teeth"
+			x: 7.0d
+			y: -0.75d
+		}
+		{
+			dependencies: [
+				"7EA61FB4041AD8B5"
+				"930E7AE8658209DC"
+			]
+			description: [
+				"Craft mechanical crafters and use the workshop to automate at least one component you expect to need repeatedly."
+				"When this quest is complete, the homestead has become a mechanical works capable of supporting expansion beyond walking distance."
+			]
+			id: "128E339528F19614"
+			tasks: [
+				{ id: "6F76FCBDCF0132A8", item: "create:mechanical_crafter", type: "item" }
+				{ id: "CEFC2F9AFC44DD3A", title: "Automate a Repeated Component", type: "checkmark" }
+			]
+			title: "A Workshop, Not a Workbench"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "Act I — The Mechanical Age"
+}
