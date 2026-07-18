@@ -16,7 +16,7 @@ This fork is not intended to be skyblock with grass, a collection of disconnecte
 - **Mods have jobs.** Create handles early mechanics and transport; industrial mods handle power, chemistry, and processing; storage networks arrive after real logistics; GregTech is advanced engineering rather than a parallel opening game.
 - **Automation follows understanding.** The player obtains and processes a resource manually before unlocking scalable production.
 - **Nights are playable.** The starting homestead is defensible, while the wider plain remains dangerous and eventually rewarding.
-- **Quests explain decisions.** The main campaign is concise and authored. The original mod-by-mod chapters remain available only as reference material during the rewrite.
+- **Quests explain decisions.** The loaded questbook contains one concise authored campaign. The inherited Alpha/Beta and mod-catalogue chapters are archived in Git history because their rewards and dependencies contradicted the redesign.
 
 ## Campaign structure
 
