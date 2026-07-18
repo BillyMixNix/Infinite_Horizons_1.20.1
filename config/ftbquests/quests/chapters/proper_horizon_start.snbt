@@ -6,15 +6,15 @@
 	hide_quest_details_until_startable: false
 	hide_quest_until_deps_complete: false
 	hide_quest_until_deps_visible: false
-	icon: "minecraft:compass"
+	icon: "minecraft:iron_pickaxe"
 	id: "FCB93E93B43726ED"
 	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
 			description: [
-				"Claim this before the first sunset. Place the Mega Torch at your homestead to suppress natural hostile spawning nearby. It does not disable spawners and it does not make the wider horizon safe."
-				"The bed is an emergency reset, not the intended answer to every night. The protected homestead gives you room to work after dark while the frontier remains dangerous."
+				"Claim this before the first sunset. Place the Mega Torch at the homestead you actually intend to keep. It suppresses natural hostile spawning nearby without making the wider plain or its structures safe."
+				"The bed is an emergency reset. Night should remain playable around the homestead and dangerous beyond it."
 			]
 			id: "D741CAFD3E2153D6"
 			rewards: [
@@ -23,7 +23,7 @@
 				{ count: 24, id: "B9D30FD8A921B8A7", item: "minecraft:torch", type: "item" }
 				{ count: 6, id: "1AC9DA52186C2AFA", item: "minecraft:bread", type: "item" }
 			]
-			subtitle: "A survivable first night, not a compulsory skip button"
+			subtitle: "Local safety, not a peaceful-mode bubble"
 			tasks: [{ id: "BEC894CE90BB8241", title: "Claim the Homestead Kit", type: "checkmark" }]
 			title: "Before Sunset"
 			x: 0.0d
@@ -31,115 +31,155 @@
 		}
 		{
 			dependencies: ["D741CAFD3E2153D6"]
-			description: ["Gather timber from the village or nearby trees and make a crafting table. The route remains deliberately linear until renewable lava is established."]
-			id: "0CECDF75BDB45F62"
-			tasks: [{ id: "39534D8B49665BE9", item: "minecraft:crafting_table", type: "item" }]
-			title: "A Place to Work"
+			description: [
+				"Rush a village, ruin, camp, or other point of interest and scrape together three iron ingots. Looting and scavenging are intended parts of the opening, not progression exploits."
+				"Mining, trading, structure loot, and any other honest in-world source all count. The objective is capability, not obedience to the wooden-tool ladder."
+			]
+			id: "CA80183FCBDF3396"
+			rewards: [
+				{ count: 8, id: "AAE1F4DC607CDAB2", item: "minecraft:cooked_beef", type: "item" }
+				{ count: 16, id: "AD4EEE054EE05B4B", item: "minecraft:torch", type: "item" }
+			]
+			tasks: [{ count: 3, id: "15641BBCA495C079", item: "minecraft:iron_ingot", type: "item" }]
+			title: "Yoink Three Ingots"
 			x: 1.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["0CECDF75BDB45F62"]
-			description: ["Break dirt or grass with the wooden trowel to obtain stone pebbles, then combine the pebbles into cobblestone. The flat world has a dependable stone route even before the geology overhaul is complete."]
-			id: "82A6CF90EB526B55"
-			tasks: [{ id: "775BEC01A5524CAA", item: "minecraft:cobblestone", type: "item" }]
-			title: "Stone from the Plain"
+			dependencies: ["CA80183FCBDF3396"]
+			description: [
+				"Turn the first three ingots into an iron pickaxe and skip directly to the geology beneath the plain. That shortcut is one of the central pleasures of a structure-rich flat world."
+				"Wood and stone tools remain fallback options when the horizon gives you nothing useful, not mandatory ceremonial tiers."
+			]
+			id: "AAE1F4DC607CDAB2"
+			rewards: [
+				{ id: "AF3ED0F813F6CCDA", item: "minecraft:shield", type: "item" }
+				{ count: 16, id: "0834B99A7347ED5B", item: "minecraft:ladder", type: "item" }
+			]
+			tasks: [{ id: "963A59E2E9A8B9A2", item: "minecraft:iron_pickaxe", type: "item" }]
+			title: "Straight to Iron"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["82A6CF90EB526B55"]
-			description: ["Craft a furnace and turn logs into charcoal. Charcoal supplies early light and one ingredient for the guaranteed first-lava recipe."]
-			id: "3DA4BC0C05DDC9EF"
-			rewards: [{ count: 4, id: "B417605A3627BB37", item: "minecraft:charcoal", type: "item" }]
-			tasks: [
-				{ id: "C7B4F20AE8103A27", item: "minecraft:furnace", type: "item" }
-				{ id: "87F8CB2A7952FA01", item: "minecraft:charcoal", type: "item" }
+			dependencies: ["AAE1F4DC607CDAB2"]
+			description: [
+				"Loot can launch an expedition, but it cannot supply an industrial territory forever. Open a real mine and bring home fresh iron and coal from the Deep Flat geology."
+				"This is the transition from opportunistic scavenger to someone capable of sustaining a workshop."
 			]
-			title: "Heat and Light"
+			id: "AD4EEE054EE05B4B"
+			rewards: [
+				{ count: 16, id: "D6FD5CD9B617E4C1", item: "minecraft:oak_log", type: "item" }
+				{ count: 8, id: "768E488134125390", item: "minecraft:cooked_porkchop", type: "item" }
+			]
+			tasks: [
+				{ count: 8, id: "7283FE5C43A42882", item: "minecraft:raw_iron", type: "item" }
+				{ count: 8, id: "58B2FB3043F5ED90", item: "minecraft:coal", type: "item" }
+			]
+			title: "Break Ground"
 			x: 3.0d
 			y: -0.5d
 		}
 		{
-			dependencies: ["82A6CF90EB526B55"]
-			description: ["Hammer cobblestone into gravel and sift the gravel for iron. Collect nuggets until you can form an ingot. This temporary bootstrap remains explicit while natural ore generation is rebuilt."]
-			id: "CA80183FCBDF3396"
-			tasks: [{ id: "15641BBCA495C079", item: "minecraft:iron_ingot", type: "item" }]
-			title: "First Metal"
+			dependencies: ["AAE1F4DC607CDAB2"]
+			description: [
+				"A camp becomes a homestead when it can store loot, cook supplies, and support repeated expeditions. Salvage village blocks or craft your own; both approaches are valid."
+				"The reward is a utility tool, not a completed technology tier."
+			]
+			id: "3DA4BC0C05DDC9EF"
+			rewards: [
+				{ id: "64BB524692D37D57", item: "minecraft:bucket", type: "item" }
+				{ count: 8, id: "2F386E40AD99D6AA", item: "minecraft:bread", type: "item" }
+			]
+			tasks: [
+				{ id: "C7B4F20AE8103A27", item: "minecraft:furnace", type: "item" }
+				{ id: "10054F42B27A19DA", item: "minecraft:chest", type: "item" }
+				{ id: "91B4A5004A2CA9F2", item: "minecraft:crafting_table", type: "item" }
+			]
+			title: "A Working Homestead"
 			x: 3.0d
 			y: 0.75d
 		}
 		{
-			dependencies: ["CA80183FCBDF3396"]
-			description: [
-				"Craft an iron bucket. Water and lava progression both begin here."
-				"Claim the two filled buckets as a deterministic bootstrap; the world may provide water elsewhere, but the campaign never depends on a lucky well or rainstorm."
+			dependencies: [
+				"AD4EEE054EE05B4B"
+				"3DA4BC0C05DDC9EF"
 			]
-			id: "9984A0AA74A9CECD"
-			rewards: [{ count: 2, id: "7C2D4A0197B8E663", item: "minecraft:water_bucket", type: "item" }]
-			tasks: [{ id: "E782D7C4047A0086", item: "minecraft:bucket", type: "item" }]
-			title: "Contain the Elements"
+			description: [
+				"You now have a defended home, an iron tool, and a sustainable mine. That is enough to begin machinery. Water pools, lava pools, villages, and ruins are opportunities on the map—not artificial locks in a quest line."
+				"Claim this when the mine and homestead feel like places you can return to, not temporary holes in the ground."
+			]
+			id: "6ABFBD9BF94386A9"
+			rewards: [
+				{ count: 24, id: "EBC04BBAF1CB2525", item: "minecraft:andesite", type: "item" }
+				{ count: 16, id: "4C5F90D22F94F6C3", item: "minecraft:kelp", type: "item" }
+				{ count: 8, id: "5BCA0088203E7988", item: "minecraft:copper_ingot", type: "item" }
+			]
+			tasks: [{ id: "D7F2B74200309FC8", title: "Establish the Mine and Homestead", type: "checkmark" }]
+			title: "The Horizon Opens"
 			x: 4.0d
-			y: 0.75d
+			y: 0.0d
 		}
 		{
-			dependencies: ["9984A0AA74A9CECD"]
+			dependencies: ["D741CAFD3E2153D6"]
 			description: [
-				"Place the two rewarded water sources diagonally in a 2×2 pool. The remaining corners become renewable source blocks."
-				"Verify that you can repeatedly refill the bucket before consuming water in machines or farms."
+				"No useful structure nearby? Start from the soil instead. The wooden trowel yields stone pebbles, pebbles form cobblestone, and gravel sifting can bootstrap iron at intentionally poor rates."
+				"This branch exists to prevent a dead seed. It is not the preferred opening when scavenging opportunities are visible."
 			]
-			id: "268ACC0C3F7DC96D"
-			tasks: [{ id: "A6F2E11CB73D9804", title: "Build and Test an Infinite Water Pool", type: "checkmark" }]
-			title: "A Permanent Water Supply"
-			x: 5.0d
+			id: "83E0C3E82EC04667"
+			rewards: [{ count: 8, id: "D274C388F19D5036", item: "minecraft:charcoal", type: "item" }]
+			tasks: [
+				{ count: 8, id: "E229EA20A33B77DC", item: "minecraft:cobblestone", type: "item" }
+				{ id: "3C5ABE5A1973B4D2", item: "minecraft:furnace", type: "item" }
+			]
+			title: "Fallback: Start From Dirt"
+			x: 1.0d
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"3DA4BC0C05DDC9EF"
-				"9984A0AA74A9CECD"
-			]
+			dependencies: ["3DA4BC0C05DDC9EF"]
 			description: [
-				"The first lava source is guaranteed and non-circular: craft seven cobblestone, one empty bucket, and one coal or charcoal into a lava bucket. The recipe is visible in JEI under Proper Horizon."
-				"This is the bootstrap source. The next quest turns it into renewable production."
+				"Water is already part of the world. Find a pond, village well, or other source and turn access into infrastructure by building a refillable pool at the homestead."
+				"This is optional utility work, not permission to continue the campaign."
+			]
+			id: "268ACC0C3F7DC96D"
+			rewards: [{ count: 4, id: "446FF605CD40565E", item: "create:fluid_pipe", type: "item" }]
+			tasks: [
+				{ id: "25BD5630003CCF9D", item: "minecraft:water_bucket", type: "item" }
+				{ id: "FE21B80DF0B6D734", title: "Build a Refillable Homestead Pool", type: "checkmark" }
+			]
+			title: "Optional: Waterworks"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3DA4BC0C05DDC9EF"]
+			description: [
+				"Surface lava pools are valuable discoveries. Bring one source home or mark the pool as a future industrial site. The emergency cobblestone-and-fuel recipe remains available only as a dead-seed fallback."
+				"The reward provides the pieces for renewable lava when you decide its throughput is worth building."
 			]
 			id: "DDCF8B52206F5365"
 			rewards: [
-				{ id: "53BD72288C828E2D", item: "minecraft:cauldron", type: "item" }
-				{ count: 4, id: "493532405B4D5332", item: "minecraft:pointed_dripstone", type: "item" }
+				{ id: "8885C51C6CACD79B", item: "minecraft:cauldron", type: "item" }
+				{ count: 4, id: "30E0703E63A0AA5C", item: "minecraft:pointed_dripstone", type: "item" }
 			]
-			tasks: [{ id: "54D507B6790362C2", item: "minecraft:lava_bucket", type: "item" }]
-			title: "Lava, Clearly"
-			x: 5.0d
-			y: 0.0d
+			tasks: [{ id: "B79FD813E0DF7904", item: "minecraft:lava_bucket", type: "item" }]
+			title: "Optional: Fire in the Ground"
+			x: 4.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["DDCF8B52206F5365"]
 			description: [
-				"Build the vanilla dripstone generator: lava source on top, a solid block directly beneath it, pointed dripstone hanging from that block, and a cauldron below the dripstone."
-				"The source remains in place while the cauldron slowly fills. Add more modules when industry demands more lava. Pointed dripstone also has a guaranteed clay-and-flint recipe."
+				"A found lava pool is enough for early work. Renewable lava becomes worthwhile when machines begin consuming it continuously. Build a dripstone-and-cauldron module when that need actually exists."
 			]
 			id: "F724B0408E097E6C"
-			tasks: [
-				{ id: "E1609B0FC8681205", item: "minecraft:cauldron", type: "item" }
-				{ id: "1D38FCA9FD1F3D48", item: "minecraft:pointed_dripstone", type: "item" }
-			]
-			title: "Renewable Lava"
-			x: 6.0d
-			y: 0.0d
-		}
-		{
-			dependencies: [
-				"F724B0408E097E6C"
-				"268ACC0C3F7DC96D"
-			]
-			description: ["Combine controlled water and lava to make obsidian. With renewable lava established, the campaign can open into machinery, exploration, and infrastructure without hiding a foundational resource behind guesswork."]
-			id: "6ABFBD9BF94386A9"
-			tasks: [{ id: "838EA91035AB0E4D", item: "minecraft:obsidian", type: "item" }]
-			title: "The Horizon Opens"
-			x: 7.0d
-			y: 0.5d
+			rewards: [{ count: 8, id: "B5A196A7CAA40ECD", item: "minecraft:dripstone_block", type: "item" }]
+			tasks: [{ id: "7141852D59D78E35", title: "Build a Renewable Lava Module", type: "checkmark" }]
+			title: "Optional: Renewable Lava"
+			x: 5.0d
+			y: -1.5d
 		}
 	]
-	title: "Act 0 — The First Horizon"
+	title: "Act 0 — Scavenge, Settle, Descend"
 }
