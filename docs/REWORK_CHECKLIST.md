@@ -8,182 +8,180 @@ Nothing moves from `[~]` to `[x]` without an actual fresh-world playtest.
 
 - [x] Fork upstream repository and preserve history.
 - [x] Create `agent/proper-infinite-horizon` redesign branch.
-- [x] Open draft pull request.
-- [x] Add authoritative design specification.
-- [x] Replace generic README with fork identity and design pillars.
-- [~] Add a deterministic first-hour quest spine.
-- [~] Add guaranteed bootstrap lava and pointed-dripstone recipes.
-- [ ] Launch client and confirm KubeJS/FTB Quests parse the first patch.
-- [ ] Complete the first-hour route in a fresh world without commands.
+- [x] Open and maintain a draft pull request.
+- [x] Add an authoritative design specification.
+- [x] Replace the generic README with the fork identity and design pillars.
+- [x] Add an exact full-pack playtest protocol.
+- [~] Add static JSON, SNBT, quest-ID, dependency, recipe-ID, and world-preset validation.
+- [ ] Obtain a successful GitHub Actions or local validator run.
+- [ ] Launch the client and inspect Forge, KubeJS, and FTB Quests logs.
 
 ## World generation
 
-- [~] Identify the current mechanism that selects superflat generation.
-- [~] Define and select the new data-driven deep-flat overworld preset.
-- [~] Provide 64 deepslate layers, 60 stone layers, soil, and a level surface.
-- [~] Enable biome features so vanilla and modded ore placement can participate in flat chunks.
-- [~] Preserve villages, mineshafts, pillager outposts, ruined portals, and strongholds.
-- [ ] Add visible long-range landmarks beyond the selected vanilla structures.
-- [ ] Add or preserve shallow water, marsh, crater, trench, and sinkhole features.
-- [ ] Establish common and regional deposit rules.
-- [ ] Add an early prospecting route.
-- [ ] Add improved mid-game surveying.
-- [ ] Test Nether and End access and generation.
-- [~] Warn that the worldgen overhaul is new-save content until migration is validated.
+- [x] Identify the legacy superflat selector and its twelve-dirt-layer preset.
+- [~] Define and select `proper_horizon:deep_flat`.
+- [~] Provide one bedrock, 64 deepslate, 60 stone, four soil, and one grass layer.
+- [~] Enable biome features so ordinary and modded ore placement can participate.
+- [~] Leave structure overrides absent so all compatible registered structure sets are considered.
+- [~] Preserve normal Nether and End generation.
+- [~] Add rare shallow surface ponds.
+- [~] Add rare regional iron motherlodes.
+- [~] Add rare regional copper motherlodes.
+- [ ] Validate vanilla and every required modded ore family in generated chunks.
+- [ ] Validate villages, strongholds, mineshafts, ruins, dungeons, and modded landmarks.
+- [ ] Tune pond and motherlode frequency from observed generation.
+- [ ] Add further regional deposits only after iron and copper prove the model.
+- [ ] Add an actual early prospecting tool or tested surveying system.
+- [ ] Add improved mid-game prospecting.
+- [ ] Decide whether additional horizontal biome-like regions are achievable without abandoning the flat generator.
+- [~] Treat the geology overhaul as new-save content until migration is proven.
 
 ## Quest campaign
 
-- [~] Create the Proper Horizon campaign group.
-- [~] Relabel original overview chapters as legacy progression.
-- [~] Relabel mod-by-mod chapters as reference manuals.
-- [~] Add the Read This First orientation chapter.
+- [x] Create the Proper Horizon Campaign group.
+- [x] Create the Optional Systems and Projects group.
+- [x] Remove all inherited Alpha/Beta, mod-catalogue, and old GregTech chapters from the loaded pack.
+- [x] Preserve removed quest source in Git history.
+- [~] Add Read This First orientation.
 - [~] Act 0: The First Horizon.
 - [~] Act I: The Mechanical Age.
 - [~] Act II: Lines Across the Plain.
 - [~] Act III: The Industrial Age.
 - [~] Act IV: A Connected Territory.
 - [~] Act V: The Engineered Horizon.
-- [ ] Validate every cross-chapter dependency.
-- [ ] Remove or redirect contradictory legacy quests.
-- [~] Give every new mandatory quest an explicit purpose and acquisition explanation.
-- [~] Keep individual item catalogues out of the Proper Horizon campaign.
-- [ ] Audit rewards for sequence-breaking items.
+- [~] Add authored optional projects for food, settlements, magic, mobs, greenhouses, renewables, and night expeditions.
+- [~] Give each new mandatory quest a purpose, route, and capability explanation.
+- [~] Keep item-catalogue checklists out of the loaded campaign.
+- [ ] Confirm every item ID, task type, dependency, and reward in game.
+- [ ] Test FTB Teams progression and reward behavior.
 
 ## Early survival
 
-- [~] Provide a claimable homestead safety kit.
-- [~] Give the player a bed without making sleep the only night strategy.
-- [~] Give the player limited food and lighting.
-- [ ] Confirm Mega Torch radius and recipe/config behavior.
-- [ ] Confirm the starter kit cannot be reclaimed infinitely.
+- [~] Provide a one-time homestead kit with a Mega Torch, bed, torches, and limited food.
 - [~] Explain local safety versus frontier danger.
-- [ ] Test multiplayer/team reward behavior.
+- [~] Provide deterministic stone and first-iron bootstrap routes.
+- [~] Reward exactly two water buckets after the player crafts a bucket.
+- [~] Require building and testing a permanent 2×2 water source.
+- [~] Add deterministic first lava and pointed-dripstone recipes.
+- [~] Require renewable dripstone lava before Act I.
+- [ ] Confirm the Mega Torch radius and interaction with modded mobs.
+- [ ] Confirm the starter kit cannot be duplicated through teams or resets.
+- [ ] Record time to shelter, first iron, water, lava, and renewable lava.
+- [ ] Test three nights at increasing distance from the safe zone.
 
 ## Resource economy
 
-- [ ] Build a complete required-material dependency graph.
-- [ ] Classify each material as common, regional, exceptional, or synthetic.
-- [~] Establish non-circular bootstrap routes for stone, first iron, water, and lava.
-- [~] Restore mining as the intended primary early source of common ores through Deep Flat worldgen.
-- [~] Convert gravel and deepslate sifting from universal ore generation to trace recovery/bootstrap support.
-- [ ] Gate bees, crops, void miners, and laser drills behind prior resource discovery.
-- [ ] Prevent wandering traders from being the only mandatory source.
-- [ ] Prevent village trades from bypassing major technology tiers.
-- [ ] Audit quest rewards that duplicate machines or large resource quantities.
+- [~] Restore mining as the intended source of ordinary ores.
+- [~] Convert gravel sifting into first-iron bootstrap and trace recovery.
+- [~] Convert deepslate sifting into low-yield excavation-waste recovery.
+- [~] Keep the Mekanism Digital Miner unavailable.
+- [~] Remove Industrial Foregoing laser machines and custom universal extraction tables.
+- [~] Gate Mystical Agriculture's seed base behind ultimate control and a Nether Star.
+- [~] Gate Productive Bees advanced hives and expansion boxes behind late industrial materials.
+- [~] Keep ProjectE, CobbleForDays, and ore-tree opening bypasses disabled.
+- [~] Restore finite villager trade stock.
+- [ ] Build a complete required-material dependency graph from actual recipes.
+- [ ] Classify required materials as common, regional, exceptional, or synthetic.
+- [ ] Ensure every required modded metal appears naturally or has a documented deterministic route.
+- [ ] Audit all remaining resource crops, bees, botany, mob simulation, and void-style generation.
 - [ ] Audit ore multiplication across Create, Thermal, Mekanism, GregTech, and other mods.
+- [ ] Audit loot tables and structures for sequence-breaking machines.
 
-## Mod roles and progression
+## Technology roles
 
 ### Create
 
-- [~] Assign as the primary early mechanical and logistics system.
-- [~] Rebalance sifting away from universal ore generation.
-- [ ] Rebalance mechanical extruder output.
-- [ ] Validate andesite, brass, blaze burner, and precision mechanism routes.
-- [~] Make trains, stations, schedules, freight, and signals part of required progression.
+- [~] Make Create the authored mechanical and freight tier.
+- [~] Require power, stress understanding, processing, material flow, brass, sequenced assembly, and a real automated component.
+- [~] Require track, stations, freight interfaces, schedules, a delivery, and signals.
+- [~] Rebalance sifting away from universal ore manufacture.
+- [ ] Validate andesite, blaze burner, brass, precision mechanism, train, and signal routes.
+- [ ] Confirm mechanical extruders renew construction geology without bypassing the material economy.
 
 ### Immersive Engineering
 
-- [~] Assign first electrical grid and visible heavy infrastructure.
-- [ ] Validate generator, wire, transformer, steel, and multiblock routes.
-- [~] Put the first visible electrical grid before compact Mekanism integration.
+- [~] Make IE the first visible electrical grid and canonical coke/steel infrastructure.
+- [~] Place the grid before compact Mekanism integration.
+- [ ] Validate Coke Oven, crude blast furnace, dynamo, wires, treated wood, and steel.
+- [ ] Add or tune transformers and grid-scale distribution when tested.
 
-### Thermal
+### Thermal, Mekanism, Ender IO, Powah, and Advanced Generators
 
-- [~] Assign general processing, fluid handling, and machine augmentation.
-- [ ] Remove duplicate mandatory quests where another mod owns the capability.
-- [ ] Balance augments and throughput against Mekanism and Ender IO.
-
-### Mekanism
-
-- [~] Assign advanced ore processing, gases, chemistry, and high-energy systems.
-- [~] Keep the Digital Miner recipe disabled until surveying and regional development are validated.
-- [ ] Design the eventual Digital Miner research and recipe gate.
-- [ ] Validate steel, alloys, gases, and ore-processing tiers.
-- [~] Place Mekanism after the first Immersive Engineering grid in the campaign.
-
-### Ender IO
-
-- [~] Assign compact integration and conduits after conventional infrastructure.
-- [ ] Gate conduits and teleport-style conveniences appropriately.
-
-### Powah and Advanced Generators
-
-- [~] Assign scalable modular and specialized power after first-grid progression.
-- [ ] Balance generation tiers and fuel loops.
-- [ ] Remove recipes that leapfrog the industrial act.
+- [~] Assign Thermal general processing and fluids.
+- [~] Assign Mekanism advanced ore processing, gases, chemistry, and high-energy systems.
+- [~] Assign Ender IO compact integration after conventional infrastructure.
+- [~] Assign Powah and Advanced Generators scalable/specialized later power.
+- [ ] Remove or gate recipes that leapfrog the first grid or authored fuel loops.
+- [ ] Balance throughput, augmentation, cables, conduits, generators, and energy storage.
+- [ ] Design an eventual tested Digital Miner research gate or keep it permanently unavailable.
 
 ### Storage and control
 
-- [~] Assign AE2 as the primary advanced network and autocrafting path.
-- [~] Keep Refined Storage as an optional alternative rather than a duplicate required tree.
-- [~] Assign Integrated Dynamics and Modular Routers to logic/local automation.
-- [~] Gate campaign wireless access until after physical freight progression.
-- [ ] Audit Functional and Sophisticated Storage rewards and recipes.
+- [~] Make local drawers and barrels production buffers rather than obsolete clutter.
+- [~] Make AE2 the primary authored network and autocrafting path.
+- [~] Keep Refined Storage optional.
+- [~] Require a real multi-step processing craft before network completion.
+- [~] Gate wireless access until after the physical freight territory exists.
+- [ ] Audit long-range wireless item, fluid, and power transfer from every installed mod.
+- [ ] Validate channels, cells, terminals, processors, and remote-site integration.
 
-### GregTech
+### GregTech and endgame
 
-- [~] Move conceptual role to late advanced engineering.
-- [~] Identify the existing GregTech getting-started chain and its legacy dependencies.
-- [~] Replace the campaign entry with a continuation of existing steel, power, logistics, and automation.
-- [~] Integrate bronze, steam compression, refractory materials, and the primitive blast furnace without demanding a second opening game.
-- [~] Define continental endgame projects.
-- [ ] Rebalance the full GregTech reference tree around that entry point.
+- [~] Move GregTech to advanced engineering after the connected territory.
+- [~] Integrate bronze, steam compression, fireclay, and the primitive blast furnace without a second opening game.
+- [~] Define endgame through continental projects rather than one singularity craft.
+- [ ] Audit the full GregTech recipe ladder against existing steel, power, chemistry, and logistics.
+- [ ] Validate the authored entry and first useful GregTech production line.
 
-### Optional systems
+## Logistics, travel, and settlements
 
-- [ ] Integrate food mods around settlement provisioning and buffs.
-- [ ] Integrate magic mods as alternate tools and specialized production.
-- [ ] Gate renewable resource mods behind natural discovery.
-- [ ] Gate mob automation behind encounter/study milestones.
-- [ ] Prevent Apotheosis loot from invalidating crafted equipment progression.
-- [ ] Keep Compact Machines and RFTools as advanced spatial tools.
-
-## Logistics and exploration
-
-- [~] Add campaign requirement for a remote outpost.
-- [~] Add campaign requirement for a freight railway.
-- [ ] Define regional deposits and structure rewards.
-- [~] Add compass, map, spyglass, and a manual survey milestone.
-- [~] Require discovery, development, and a freight run before optional teleport linking.
-- [ ] Add night or frontier events worth confronting.
-- [~] Add minimum shelter, storage, food, processing, and lighting expectations for the first outpost.
-- [ ] Test train chunk-loading and multiplayer behavior.
+- [~] Require a surveyed distant site and functioning outpost.
+- [~] Require a freight railway and successful shipment.
+- [~] Disable generated waystones and village waystones.
+- [~] Disable cross-dimensional waystone travel.
+- [~] Add finite distance-based XP costs and longer cooldowns.
+- [~] Require a train station and precision mechanism to craft a waystone.
+- [~] Restore normal finite villager restocking.
+- [~] Add an optional settlement-supply project.
+- [ ] Test train behavior across chunk unloading and server restarts.
+- [ ] Test waystone recipes, costs, cooldowns, ownership, and multiplayer behavior.
+- [ ] Audit other teleportation, wireless transport, and home-command systems.
+- [ ] Add frontier events or valuable night activity beyond the optional expedition milestone.
 
 ## Interface and onboarding
 
 - [~] Rename the KubeJS display and login message to Proper Infinite Horizons.
-- [ ] Replace or safely rework the inherited FancyMenu title screen after client launch testing.
-- [ ] Replace upstream wiki links that no longer describe progression.
-- [~] Put the Proper Horizon Campaign first in chapter-group order.
-- [~] Add a concise Read This First guide.
-- [~] Label the original progression and mod guides as legacy/reference material.
-- [ ] Audit JEI categories and hidden items.
-- [ ] Audit default keybind conflicts.
-- [~] Remove the obsolete login warning about upstream version 13.1 mod removals.
-- [ ] Reduce redundant books and onboarding popups.
+- [~] Put the new campaign first and make it the only loaded progression book.
+- [~] Add Read This First and explicit development-build warnings.
+- [~] Document single-player and dedicated-server preset setup.
+- [ ] Rework inherited FancyMenu branding and upstream links after a client launch test.
+- [ ] Remove or replace obsolete upstream wiki links outside the deleted questbook.
+- [ ] Audit JEI categories, hidden items, redundant books, popups, and keybind conflicts.
 
-## Performance and maintenance
+## Validation and release engineering
 
-- [ ] Audit duplicate mods and overlapping systems.
+- [~] Add `tools/validate_pack.py`.
+- [~] Add GitHub Actions static-validation workflow.
+- [~] Add `docs/PLAYTEST_PLAN.md`.
+- [~] Add dedicated-server instructions and example properties.
+- [ ] Run and fix static validation.
+- [ ] Add a reproducible CurseForge/launcher export process.
+- [ ] Add explicit versioning and changelog policy.
+- [ ] Audit duplicate and overlapping mods after progression is proven.
 - [ ] Audit client-only versus server-required mods.
-- [ ] Review memory recommendation after changes.
-- [ ] Add automated static checks where practical.
-- [ ] Add a reproducible pack export process.
-- [ ] Add versioning and changelog policy.
-- [ ] Test dedicated-server startup.
-- [ ] Test multiplayer quest/team behavior.
-- [ ] Test a long-running world for chunk and entity performance.
+- [ ] Review memory recommendations and performance.
+- [ ] Test dedicated-server startup, multiplayer teams, restarts, and long-running worlds.
 
 ## Release gate
 
-- [ ] All six acts pass fresh-world progression tests.
-- [ ] Deep-flat worldgen is selected reliably.
-- [ ] Common ores, regional resources, structures, Nether, and End generate correctly.
-- [ ] No known mandatory dead ends.
-- [ ] No known circular recipes.
-- [ ] No universal early resource generator.
+- [ ] Static validator passes on the release commit.
+- [ ] Client and dedicated server start without KubeJS or quest errors.
+- [ ] Deep Flat is selected reliably and creates the intended geology.
+- [ ] Common ores, required modded ores, ponds, motherlodes, structures, Nether, and End generate correctly.
+- [ ] Act 0 completes from a fresh world without commands or RNG-only blockers.
+- [ ] Acts I–V each complete at least once without hidden mandatory routes.
+- [ ] No universal early resource generator remains.
 - [ ] No major technology tier can be trivially bypassed.
-- [ ] Dedicated-server and single-player smoke tests pass.
-- [ ] License and third-party attribution review complete.
-- [ ] Exported build installs cleanly through the chosen launcher.
+- [ ] Train, waystone, network, and team behavior pass multiplayer testing.
+- [ ] License and third-party attribution review is complete.
+- [ ] Exported build installs and launches cleanly in the chosen launcher.
