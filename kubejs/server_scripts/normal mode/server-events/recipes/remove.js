@@ -28,6 +28,7 @@ ServerEvents.recipes(event => {
         'industrialforegoing:laser_drill',
         'industrialforegoing:ore_laser_base',
         'industrialforegoing:fluid_laser_base',
+        'mysticalagriculture:prosperity_seed_base',
         'extendedcrafting:the_ultimate_block',
         'extendedcrafting:the_ultimate_ingot',
         'extendedcrafting:the_ultimate_nugget',
@@ -36,6 +37,10 @@ ServerEvents.recipes(event => {
     outputs.forEach(output => {
         event.remove({ output: output });
     });
+
+    // Resource crops and resource bees are late renewable infrastructure.
+    event.remove({ output: /productivebees:advanced_.*_beehive/ });
+    event.remove({ output: /productivebees:expansion_box_.*/ });
 
     // removing by mod
     const mods = ['dimpaintings'];
