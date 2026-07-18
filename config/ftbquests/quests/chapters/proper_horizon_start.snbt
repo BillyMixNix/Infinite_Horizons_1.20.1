@@ -1,0 +1,195 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_start"
+	group: "6F4C25734B575319"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "minecraft:compass"
+	id: "FCB93E93B43726ED"
+	order_index: -100
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Claim this before the first sunset. Place the Mega Torch at your homestead to suppress natural hostile spawning nearby. It does not disable spawners and it does not make the wider horizon safe."
+				"The bed is an emergency reset, not the intended answer to every night. The protected homestead gives you room to work after dark."
+			]
+			id: "D741CAFD3E2153D6"
+			rewards: [
+				{
+					id: "68A4538795DE9A60"
+					item: "torchmaster:megatorch"
+					type: "item"
+				}
+				{
+					id: "E893286E5CE9B692"
+					item: "minecraft:white_bed"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "B9D30FD8A921B8A7"
+					item: "minecraft:torch"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "1AC9DA52186C2AFA"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			subtitle: "A survivable first night, not a compulsory skip button"
+			tasks: [{
+				id: "BEC894CE90BB8241"
+				title: "Claim the Homestead Kit"
+				type: "checkmark"
+			}]
+			title: "Establish a Safe Foothold"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D741CAFD3E2153D6"]
+			description: ["Gather timber from the village or nearby trees and make a crafting table. This is the first required step; the remaining path is deliberately linear until renewable lava."]
+			id: "0CECDF75BDB45F62"
+			tasks: [{
+				id: "39534D8B49665BE9"
+				item: "minecraft:crafting_table"
+				type: "item"
+			}]
+			title: "A Place to Work"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0CECDF75BDB45F62"]
+			description: ["Break dirt or grass with the wooden trowel to obtain stone pebbles, then combine the pebbles into cobblestone. The flat world still has a dependable stone route."]
+			id: "82A6CF90EB526B55"
+			tasks: [{
+				id: "775BEC01A5524CAA"
+				item: "minecraft:cobblestone"
+				type: "item"
+			}]
+			title: "Stone from the Plain"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["82A6CF90EB526B55"]
+			description: ["Craft a furnace and begin producing charcoal. You will need one coal or charcoal for the guaranteed first-lava recipe."]
+			id: "3DA4BC0C05DDC9EF"
+			rewards: [{
+				count: 8
+				id: "B417605A3627BB37"
+				item: "minecraft:charcoal"
+				type: "item"
+			}]
+			tasks: [{
+				id: "C7B4F20AE8103A27"
+				item: "minecraft:furnace"
+				type: "item"
+			}]
+			title: "Heat and Light"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["82A6CF90EB526B55"]
+			description: ["Hammer cobblestone into gravel and sift the gravel for iron. Collect nuggets until you can form an ingot. This is the intended early metal route; it is not supposed to be guessed from JEI alone."]
+			id: "CA80183FCBDF3396"
+			tasks: [{
+				id: "15641BBCA495C079"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			title: "First Metal"
+			x: 3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["CA80183FCBDF3396"]
+			description: ["Craft an iron bucket. Water and lava progression both begin here."]
+			id: "9984A0AA74A9CECD"
+			tasks: [{
+				id: "E782D7C4047A0086"
+				item: "minecraft:bucket"
+				type: "item"
+			}]
+			title: "Contain the Elements"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"3DA4BC0C05DDC9EF"
+				"9984A0AA74A9CECD"
+			]
+			description: [
+				"The first lava source is guaranteed and non-circular: craft seven cobblestone, one empty bucket, and one coal or charcoal into a lava bucket. The recipe is visible in JEI under Proper Horizon."
+				"This is the bootstrap source. The next quest turns it into renewable production."
+			]
+			id: "DDCF8B52206F5365"
+			rewards: [
+				{
+					id: "53BD72288C828E2D"
+					item: "minecraft:cauldron"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "493532405B4D5332"
+					item: "minecraft:pointed_dripstone"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "54D507B6790362C2"
+				item: "minecraft:lava_bucket"
+				type: "item"
+			}]
+			title: "Lava, Clearly"
+			x: 5.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["DDCF8B52206F5365"]
+			description: [
+				"Build the vanilla dripstone generator: lava source on top, a solid block directly beneath it, pointed dripstone hanging from that block, and a cauldron below the dripstone."
+				"The source remains in place while the cauldron slowly fills. Add more modules when your industry needs more lava. Pointed dripstone also has a guaranteed clay-and-flint recipe."
+			]
+			id: "F724B0408E097E6C"
+			tasks: [
+				{
+					id: "E1609B0FC8681205"
+					item: "minecraft:cauldron"
+					type: "item"
+				}
+				{
+					id: "1D38FCA9FD1F3D48"
+					item: "minecraft:pointed_dripstone"
+					type: "item"
+				}
+			]
+			title: "Renewable Lava"
+			x: 6.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["F724B0408E097E6C"]
+			description: ["Combine controlled water and lava to make obsidian. With renewable lava established, the rest of the pack can branch into exploration, automation, and infrastructure without hiding a foundational resource behind guesswork."]
+			id: "6ABFBD9BF94386A9"
+			tasks: [{
+				id: "838EA91035AB0E4D"
+				item: "minecraft:obsidian"
+				type: "item"
+			}]
+			title: "The Horizon Opens"
+			x: 7.0d
+			y: 0.5d
+		}
+	]
+	title: "Start Here: The First Horizon"
+}
