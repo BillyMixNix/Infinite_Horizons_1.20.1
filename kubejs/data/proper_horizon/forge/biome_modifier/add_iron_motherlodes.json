@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:plains",
+  "features": "proper_horizon:iron_motherlode",
+  "step": "underground_ores"
+}
