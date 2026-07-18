@@ -15,6 +15,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QUEST_ROOT = ROOT / "config" / "ftbquests" / "quests"
 CAMPAIGN_GROUP = "511DB7CE6F25D05C"
+OPTIONAL_GROUP = "E2C2E5D235077830"
+OPTIONAL_CHAPTERS = {"proper_horizon_projects.snbt"}
+EXPECTED_GROUPS = {CAMPAIGN_GROUP, OPTIONAL_GROUP}
 
 HEX_ID_RE = re.compile(r'\bid\s*:\s*"([0-9A-F]{16})"')
 DEPENDENCY_BLOCK_RE = re.compile(r'\bdependencies\s*:\s*\[(.*?)\]', re.DOTALL)
@@ -130,17 +133,34 @@ def validate_quests(errors: list[str]) -> None:
     if groups_path.exists():
         group_ids.update(HEX_ID_RE.findall(groups_path.read_text(encoding="utf-8")))
 
+    if group_ids != EXPECTED_GROUPS:
+        missing = sorted(EXPECTED_GROUPS - group_ids)
+        extra = sorted(group_ids - EXPECTED_GROUPS)
+        if missing:
+            errors.append(f"Missing expected chapter groups: {', '.join(missing)}")
+        if extra:
+            errors.append(f"Unexpected legacy/reference chapter groups remain: {', '.join(extra)}")
+
     for path in chapter_files:
         text = path.read_text(encoding="utf-8")
         group_match = GROUP_RE.search(text)
         if not group_match:
             errors.append(f"{relative(path)}: chapter has no group id")
             continue
+
         group_id = group_match.group(1)
         if group_id not in group_ids:
             errors.append(f"{relative(path)}: references missing chapter group {group_id}")
-        if path.name.startswith("proper_horizon_") and group_id != CAMPAIGN_GROUP:
-            errors.append(f"{relative(path)}: Proper Horizon chapter is outside campaign group")
+
+        if not path.name.startswith("proper_horizon_"):
+            errors.append(f"{relative(path)}: inherited quest chapter is still loaded")
+            continue
+
+        expected_group = OPTIONAL_GROUP if path.name in OPTIONAL_CHAPTERS else CAMPAIGN_GROUP
+        if group_id != expected_group:
+            errors.append(
+                f"{relative(path)}: expected group {expected_group}, found {group_id}"
+            )
 
 
 def validate_recipe_ids(errors: list[str]) -> None:
@@ -207,6 +227,10 @@ def validate_world_preset(errors: list[str]) -> None:
         errors.append(f"{relative(preset_path)}: overworld generator is not flat")
     if settings.get("features") is not True:
         errors.append(f"{relative(preset_path)}: biome features are not enabled")
+    if "structure_overrides" in settings:
+        errors.append(
+            f"{relative(preset_path)}: structure_overrides restricts modded structure sets"
+        )
 
     layers = settings.get("layers")
     if not isinstance(layers, list):
@@ -226,6 +250,8 @@ def validate_world_preset(errors: list[str]) -> None:
         errors.append(f"{relative(preset_path)}: insufficient deepslate depth")
     if heights.get("minecraft:stone", 0) < 32:
         errors.append(f"{relative(preset_path)}: insufficient stone depth")
+    if heights.get("minecraft:grass_block", 0) != 1:
+        errors.append(f"{relative(preset_path)}: expected one grass surface layer")
 
 
 def main() -> int:
