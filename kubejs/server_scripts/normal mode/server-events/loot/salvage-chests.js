@@ -40,6 +40,26 @@ const ADVANCED_SALVAGE = [
   Item.of('immersiveengineering:wirecoil_electrum', 1).withChance(5)
 ]
 
+const INDUSTRIAL_CHESTS = [
+  'minecraft:chests/abandoned_mineshaft',
+  'minecraft:chests/simple_dungeon',
+  'minecraft:chests/ruined_portal',
+  'minecraft:chests/stronghold_corridor',
+  'minecraft:chests/stronghold_crossing',
+  'minecraft:chests/stronghold_library'
+]
+
+const ADVANCED_CHESTS = [
+  'minecraft:chests/desert_pyramid',
+  'minecraft:chests/jungle_temple',
+  'minecraft:chests/woodland_mansion',
+  'minecraft:chests/bastion_bridge',
+  'minecraft:chests/bastion_hoglin_stable',
+  'minecraft:chests/bastion_other',
+  'minecraft:chests/bastion_treasure',
+  'minecraft:chests/end_city_treasure'
+]
+
 LootJS.modifiers(event => {
   // Every structure mod gets a small chance to contribute useful salvage.
   // This is intentionally one roll so ordinary exploration does not flood the
@@ -60,33 +80,20 @@ LootJS.modifiers(event => {
     .randomChance(0.75)
     .addWeightedLoot([1, 2], COMMON_SALVAGE)
 
-  // Mines, dungeons, portals, and strongholds can contain components from
-  // machinery that was actually operating before the site was abandoned.
-  event
-    .addLootTableModifier([
-      'minecraft:chests/abandoned_mineshaft',
-      'minecraft:chests/simple_dungeon',
-      'minecraft:chests/ruined_portal',
-      'minecraft:chests/stronghold_corridor',
-      'minecraft:chests/stronghold_crossing',
-      'minecraft:chests/stronghold_library'
-    ])
-    .randomChance(0.58)
-    .addWeightedLoot([1, 2], INDUSTRIAL_SALVAGE)
+  // Register tables individually for LootJS 2.x compatibility.
+  INDUSTRIAL_CHESTS.forEach(table => {
+    event
+      .addLootTableModifier(table)
+      .randomChance(0.58)
+      .addWeightedLoot([1, 2], INDUSTRIAL_SALVAGE)
+  })
 
   // Large treasure sites may yield a genuinely exciting component, but still
   // never hand out an assembled machine.
-  event
-    .addLootTableModifier([
-      'minecraft:chests/desert_pyramid',
-      'minecraft:chests/jungle_temple',
-      'minecraft:chests/woodland_mansion',
-      'minecraft:chests/bastion_bridge',
-      'minecraft:chests/bastion_hoglin_stable',
-      'minecraft:chests/bastion_other',
-      'minecraft:chests/bastion_treasure',
-      'minecraft:chests/end_city_treasure'
-    ])
-    .randomChance(0.68)
-    .addWeightedLoot([1, 2], ADVANCED_SALVAGE)
+  ADVANCED_CHESTS.forEach(table => {
+    event
+      .addLootTableModifier(table)
+      .randomChance(0.68)
+      .addWeightedLoot([1, 2], ADVANCED_SALVAGE)
+  })
 })
