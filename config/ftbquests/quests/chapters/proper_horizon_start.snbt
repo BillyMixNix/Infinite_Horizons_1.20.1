@@ -37,8 +37,8 @@
 			]
 			id: "CA80183FCBDF3396"
 			rewards: [
-				{ count: 8, id: "AAE1F4DC607CDAB2", item: "minecraft:cooked_beef", type: "item" }
-				{ count: 16, id: "AD4EEE054EE05B4B", item: "minecraft:torch", type: "item" }
+				{ count: 8, id: "695CDCF7468D0200", item: "minecraft:cooked_beef", type: "item" }
+				{ count: 16, id: "090AC9B68DF5F35B", item: "minecraft:torch", type: "item" }
 			]
 			tasks: [{ count: 3, id: "15641BBCA495C079", item: "minecraft:iron_ingot", type: "item" }]
 			title: "Yoink Three Ingots"
