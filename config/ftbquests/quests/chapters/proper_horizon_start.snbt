@@ -71,8 +71,12 @@
 		}
 		{
 			dependencies: ["CA80183FCBDF3396"]
-			description: ["Craft an iron bucket. Water and lava progression both begin here."]
+			description: [
+				"Craft an iron bucket. Water and lava progression both begin here."
+				"Claim the two filled buckets as a deterministic bootstrap; the world may provide water elsewhere, but the campaign never depends on a lucky well or rainstorm."
+			]
 			id: "9984A0AA74A9CECD"
+			rewards: [{ count: 2, id: "7C2D4A0197B8E663", item: "minecraft:water_bucket", type: "item" }]
 			tasks: [{ id: "E782D7C4047A0086", item: "minecraft:bucket", type: "item" }]
 			title: "Contain the Elements"
 			x: 4.0d
@@ -80,9 +84,12 @@
 		}
 		{
 			dependencies: ["9984A0AA74A9CECD"]
-			description: ["Use the village, rainfall collection, or another visible water source to fill the bucket. Create a two-source pool before consuming water in machinery."]
+			description: [
+				"Place the two rewarded water sources diagonally in a 2×2 pool. The remaining corners become renewable source blocks."
+				"Verify that you can repeatedly refill the bucket before consuming water in machines or farms."
+			]
 			id: "268ACC0C3F7DC96D"
-			tasks: [{ id: "DCC81D97C4B38B26", item: "minecraft:water_bucket", type: "item" }]
+			tasks: [{ id: "A6F2E11CB73D9804", title: "Build and Test an Infinite Water Pool", type: "checkmark" }]
 			title: "A Permanent Water Supply"
 			x: 5.0d
 			y: 1.5d
