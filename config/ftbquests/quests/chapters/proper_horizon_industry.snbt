@@ -1,0 +1,178 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_industry"
+	group: "511DB7CE6F25D05C"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "immersiveengineering:hammer"
+	id: "3CF5CB8E7F44400E"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["C183EEDB43A0E2B5"]
+			description: [
+				"The mechanical workshop can move and shape materials. Industry begins when you can produce engineered fuels, steel, electrical power, and fluids at territory scale."
+				"Craft the Engineer's Hammer and assemble a Coke Oven. The multiblock is the first piece of infrastructure too large to mistake for a crafting-table upgrade."
+			]
+			id: "17EDED4219E63841"
+			tasks: [
+				{
+					id: "05CE7FEB5C6E0A62"
+					item: { Count: 1, id: "immersiveengineering:hammer", tag: { Damage: 0 } }
+					type: "item"
+				}
+				{ count: 27L, id: "F98255786626A716", item: "immersiveengineering:cokebrick", type: "item" }
+			]
+			title: "Heavy Foundations"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["17EDED4219E63841"]
+			description: ["Process coal into coke and collect creosote. Coke is a deliberate industrial fuel step; creosote becomes treated timber for durable infrastructure."]
+			id: "19FDE15E15185172"
+			tasks: [
+				{ id: "4DAA84A3BF606EFD", item: "kubejs:coal_coke", type: "item" }
+				{ id: "EE280D6EDF4D49FB", item: "immersiveengineering:creosote_bucket", type: "item" }
+			]
+			title: "Coke and Creosote"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["19FDE15E15185172"]
+			description: [
+				"Construct the crude blast furnace and make steel. Steel is the structural gate for electrical industry and should come from a visible fuel-and-furnace chain."
+				"Other mods may process steel later, but this is the campaign's first canonical route."
+			]
+			id: "FB728FBF7F3EDFE5"
+			tasks: [
+				{ count: 27L, id: "BF8F0D51526557C3", item: "immersiveengineering:blastbrick", type: "item" }
+				{ id: "F86CD6E2F5BA5419", item: "infinite_resources:steel_ingot", type: "item" }
+			]
+			title: "The Steel Age"
+			x: 2.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["19FDE15E15185172"]
+			description: ["Use creosote to make treated wood. Build poles, platforms, and machine spaces that visually distinguish the industrial district from the original homestead."]
+			id: "80156AC922B8DB1D"
+			tasks: [{ id: "DC9B323DF9E92E0E", item: "immersiveengineering:treated_wood_horizontal", type: "item" }]
+			title: "Industrial Timber"
+			x: 2.0d
+			y: 0.75d
+		}
+		{
+			dependencies: [
+				"FB728FBF7F3EDFE5"
+				"80156AC922B8DB1D"
+			]
+			description: [
+				"Turn mechanical motion into electricity with an Immersive Engineering dynamo and connect it with copper wire. A power source without distribution is not a grid."
+				"Keep the wires visible. This first electrical network establishes the scale and language that compact systems may improve later."
+			]
+			id: "A6C027470F60A777"
+			tasks: [
+				{ id: "D2072970971EFA2B", item: "immersiveengineering:dynamo", type: "item" }
+				{ id: "B1A2E9D9E074BD2E", item: "immersiveengineering:wirecoil_copper", type: "item" }
+			]
+			title: "The First Grid"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A6C027470F60A777"]
+			description: ["Generate and move at least 10,000 FE through the industrial district. The number is small; the point is proving that generation, wiring, and consumption all function together."]
+			id: "67A8ED4F9892D26A"
+			tasks: [{ icon: "thermal:lightning_charge", id: "FE1C310128D78400", max_input: 10000L, title: "Generate 10,000 FE", type: "forge_energy", value: 10000L }]
+			title: "Power in Circulation"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"67A8ED4F9892D26A"
+				"FB728FBF7F3EDFE5"
+			]
+			description: [
+				"Mekanism enters after the first grid as the chemistry and advanced processing system. Begin with the Metallurgic Infuser and a basic control circuit."
+				"Its machines are not the source of the first electricity or steel; they expand an industry you already built."
+			]
+			id: "367FB1BDE75C637B"
+			tasks: [
+				{ id: "8B95777EE8453561", item: "mekanism:metallurgic_infuser", type: "item" }
+				{ id: "B7E79F4FCFA1C346", item: "mekanism:basic_control_circuit", type: "item" }
+			]
+			title: "Industrial Control"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["367FB1BDE75C637B"]
+			description: [
+				"Build an Enrichment Chamber and Crusher. Use them as a coordinated processing line rather than isolated blocks."
+				"At this tier, common ores should be processed at improved yield, but locating and transporting the ore still matters."
+			]
+			id: "EE27B7129CD7FEC5"
+			tasks: [
+				{ id: "C5D70B9441BDBA98", item: "mekanism:enrichment_chamber", type: "item" }
+				{ id: "C1829E70BA041859", item: "mekanism:crusher", type: "item" }
+			]
+			title: "Electrical Processing"
+			x: 6.0d
+			y: -0.75d
+		}
+		{
+			dependencies: ["EE27B7129CD7FEC5"]
+			description: [
+				"Add purification and gas handling. The Purification Chamber is the first step into multi-stage ore processing; the Electrolytic Separator establishes gases as real factory inputs."
+				"Do not build the entire maximum-yield chain until the power, oxygen, and throughput can support it."
+			]
+			id: "C49470995327432C"
+			tasks: [
+				{ id: "3994D5F72FA388B4", item: "mekanism:purification_chamber", type: "item" }
+				{ id: "2DDD73BCDA474910", item: "mekanism:electrolytic_separator", type: "item" }
+			]
+			title: "Gases and Yield"
+			x: 7.0d
+			y: -0.75d
+		}
+		{
+			dependencies: ["EE27B7129CD7FEC5"]
+			description: ["Convert biomass into biofuel, process it through a Pressurized Reaction Chamber, and establish a gas-burning generator. This is the first authored industrial fuel loop."]
+			id: "7380BDE481C22E0C"
+			tasks: [
+				{ id: "15E0533DCE3548D0", item: "mekanism:bio_fuel", type: "item" }
+				{ id: "743547F2ADEC8F0B", item: "mekanism:pressurized_reaction_chamber", type: "item" }
+				{ id: "5CD72AF3C0B7C3AD", item: "mekanismgenerators:gas_burning_generator", type: "item" }
+			]
+			title: "Fuel from the Fields"
+			x: 7.0d
+			y: 0.75d
+		}
+		{
+			dependencies: [
+				"C49470995327432C"
+				"7380BDE481C22E0C"
+			]
+			description: [
+				"Connect the district with energy cables and fluid pipes, buffer its power, and run at least two automated processing lines at once."
+				"The Industrial Age is complete when the factory behaves as one system and can supply both the homestead and the railway."
+			]
+			id: "1438522D85007BC2"
+			tasks: [
+				{ id: "278DCE3155531DB1", item: "mekanism:basic_universal_cable", type: "item" }
+				{ id: "8EBB3EF6D0209A12", item: "immersiveengineering:fluid_pipe", type: "item" }
+				{ id: "031ABCBCF595D3E1", title: "Operate Two Automated Industrial Lines", type: "checkmark" }
+			]
+			title: "A Factory in Operation"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "Act III — The Industrial Age"
+}
