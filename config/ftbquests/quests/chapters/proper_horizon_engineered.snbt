@@ -1,0 +1,129 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_engineered"
+	group: "511DB7CE6F25D05C"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "gtceu:primitive_blast_furnace"
+	id: "361693AA1964BAAC"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["7CD7AE2645B669F4"]
+			description: [
+				"GregTech enters as advanced engineering built on the territory you already developed. Its material science and machine tiers should consume existing logistics, power, steel, and automation rather than pretend none of them happened."
+				"Begin with bronze tooling and a low-pressure steam compressor. This is an interface tier, not a demand to abandon the industrial district."
+			]
+			id: "11B4BC33EE0FE702"
+			tasks: [
+				{ id: "7283DDF407825982", item: "infinite_resources:bronze_ingot", type: "item" }
+				{ id: "DF2748EA48C2E513", item: "gtceu:lp_steam_compressor", type: "item" }
+			]
+			title: "Advanced Engineering Begins"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["11B4BC33EE0FE702"]
+			description: ["Produce fireclay, compress it, and fire it into the refractory bricks required by GregTech's primitive blast furnace. The material process is the lesson; the furnace is the proof."]
+			id: "C47DCAAB327034A6"
+			tasks: [
+				{ id: "798C97DADC9AC034", item: "gtceu:fireclay_dust", type: "item" }
+				{ id: "2DE4C20C986B5794", item: "gtceu:compressed_fireclay", type: "item" }
+				{ id: "6F8AFA12B3277291", item: "gtceu:firebrick", type: "item" }
+			]
+			title: "Refractory Materials"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["C47DCAAB327034A6"]
+			description: [
+				"Construct the primitive blast furnace, then feed it from the established coal, coke, and freight economy. Existing steel remains valid; this furnace opens GregTech-specific alloys and processes."
+			]
+			id: "D08AFC813C622A3A"
+			tasks: [
+				{ id: "F0605EB51D38690E", item: "gtceu:primitive_blast_furnace", type: "item" }
+				{ id: "826DC6D49914257C", item: "infinite_resources:steel_ingot", type: "item" }
+			]
+			title: "No Second Stone Age"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D08AFC813C622A3A"]
+			description: [
+				"Build a dedicated advanced-engineering hall supplied by the rail network and digital operations core. Include steam or electrical distribution, input storage, output storage, and maintenance access."
+				"A row of machines dropped beside the old workshop does not count."
+			]
+			id: "D022CF96B6630BD0"
+			tasks: [{ id: "9FC09C850D36AA4A", title: "Commission the Advanced Engineering Hall", type: "checkmark" }]
+			title: "A New Industrial District"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D022CF96B6630BD0"]
+			description: ["Prove that the territory can sustain advanced control components and large energy demand. Produce an ultimate control circuit and move one million FE through the grid."]
+			id: "39BC13F69D8DC92C"
+			tasks: [
+				{ id: "15B36024705FC410", item: "mekanism:ultimate_control_circuit", type: "item" }
+				{ icon: "thermal:lightning_charge", id: "A53979FB5DFE54AF", max_input: 1000000L, title: "Generate 1,000,000 FE", type: "forge_energy", value: 1000000L }
+			]
+			title: "Grid-Scale Capability"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["39BC13F69D8DC92C"]
+			description: [
+				"Complete at least three continental projects. These are deliberately functional and visible: the endgame is what the world has become, not one compressed trophy item."
+			]
+			id: "E69F627B36125A61"
+			min_required_tasks: 3
+			tasks: [
+				{ id: "2B0D9ED9B6DFDCE9", title: "Electrify and Schedule a Multi-Stop Railway", type: "checkmark" }
+				{ id: "E811176D44636CB9", title: "Build a Regional Refinery and Chemical Complex", type: "checkmark" }
+				{ id: "B8438C0666DCABA7", title: "Build a Grid-Scale Power Plant and Backbone", type: "checkmark" }
+				{ id: "66A90AF0822386C1", title: "Build an Automated Agricultural and Food District", type: "checkmark" }
+				{ id: "7C66E2C9377E87A9", title: "Supply a Settlement from Central Operations", type: "checkmark" }
+			]
+			title: "Continental Projects"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["E69F627B36125A61"]
+			description: [
+				"Defeat the Wither and Ender Dragon if you have not already, then integrate dimensional materials into the territory rather than treating the dimensions as isolated loot trips."
+			]
+			id: "536823424D7DC250"
+			tasks: [
+				{ id: "3EDD0857D4282C6C", item: "minecraft:nether_star", type: "item" }
+				{ id: "7A9763348C250113", item: "minecraft:dragon_egg", type: "item" }
+			]
+			title: "Beyond the Plain"
+			x: 6.0d
+			y: -0.75d
+		}
+		{
+			dependencies: [
+				"E69F627B36125A61"
+				"536823424D7DC250"
+			]
+			description: [
+				"Stand somewhere you once considered empty and look across the lights, tracks, power lines, farms, factories, and settlements now occupying the horizon."
+				"The campaign is complete when the flat world reads as a civilization you built. Further mod chapters and optional projects remain available as engineering references."
+			]
+			id: "221B957E580F85A5"
+			tasks: [{ id: "9936D7DD578C6EF9", title: "Survey the Engineered Horizon", type: "checkmark" }]
+			title: "The Engineered Horizon"
+			x: 7.0d
+			y: 0.0d
+		}
+	]
+	title: "Act V — The Engineered Horizon"
+}
