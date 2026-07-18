@@ -25,12 +25,12 @@
 		{
 			dependencies: ["544D135B598F68AD"]
 			description: [
-				"The Proper Horizon Campaign is the authoritative progression path. Follow Acts 0 through V in order."
-				"Legacy: Original Progression preserves the old Alpha/Beta-style chapters for comparison. Reference: Mod Guides contains item-by-item documentation. Neither legacy group defines the intended balance of this redesign."
+				"The Proper Horizon Campaign is the only loaded progression path. Follow Acts 0 through V in order."
+				"The inherited Alpha/Beta chapters and reward-heavy mod catalogues were removed from the live questbook because they contradicted the new sequence and allowed progression bypasses. Their source remains preserved in Git history."
 			]
 			id: "B3A99DB52D3C7A81"
 			tasks: [{ id: "B5ECDA8E697C1A58", title: "Use the Proper Horizon Campaign", type: "checkmark" }]
-			title: "Campaign Versus Reference"
+			title: "One Authoritative Campaign"
 			x: 1.0d
 			y: 0.0d
 		}
