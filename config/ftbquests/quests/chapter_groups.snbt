@@ -2,8 +2,5 @@
 	chapter_groups: [
 		{ id: "511DB7CE6F25D05C", title: "Proper Horizon Campaign" }
 		{ id: "E2C2E5D235077830", title: "Optional Systems and Projects" }
-		{ id: "6F4C25734B575319", title: "Legacy: Original Progression" }
-		{ id: "126A1C64F6AE129F", title: "Reference: Mod Guides" }
-		{ id: "347D8BCADE6C05D9", title: "Reference: GregTech" }
 	]
 }
