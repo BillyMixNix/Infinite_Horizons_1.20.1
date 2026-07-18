@@ -1,1 +1,1 @@
-Platform.mods.kubejs.name = 'Infinite Horizons'
+Platform.mods.kubejs.name = 'Proper Infinite Horizons'
