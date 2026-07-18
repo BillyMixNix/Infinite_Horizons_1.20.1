@@ -18,6 +18,10 @@
 				"Make andesite alloy. It is the standard structural material for the mechanical workshop, not merely another checkbox."
 			]
 			id: "D00F54F4F5A28A27"
+			rewards: [
+				{ count: 16, id: "51BC88EE151E2B91", item: "minecraft:andesite", type: "item" }
+				{ count: 16, id: "5D8E6F4F8710C1B0", item: "minecraft:iron_nugget", type: "item" }
+			]
 			tasks: [{ id: "F7497F677646D8BA", item: "create:andesite_alloy", type: "item" }]
 			title: "The Mechanical Standard"
 			x: 0.0d
@@ -56,6 +60,10 @@
 			dependencies: ["46A784FDD3FEFE57"]
 			description: ["The millstone and mechanical press create the first repeatable processing floor. Route items through them instead of hand-feeding every operation forever."]
 			id: "8B98F29DD03500AB"
+			rewards: [
+				{ count: 4, id: "06AEB16DAD2D20E1", item: "create:cogwheel", type: "item" }
+				{ count: 2, id: "8D948F122E8D1D2E", item: "create:large_cogwheel", type: "item" }
+			]
 			tasks: [
 				{ id: "65DE8B7DDEB35297", item: "create:millstone", type: "item" }
 				{ id: "9D271462A4AA39B7", item: "create:mechanical_press", type: "item" }
@@ -71,6 +79,10 @@
 				"These are general capabilities. Build stations you can reuse rather than one-off contraptions for individual quests."
 			]
 			id: "D8CB3D1C29ECD5A6"
+			rewards: [
+				{ count: 4, id: "2A2B1EE017E71811", item: "create:fluid_pipe", type: "item" }
+				{ count: 2, id: "D3AFE849F910187E", item: "create:basin", type: "item" }
+			]
 			tasks: [
 				{ id: "84AC935DC0DF6201", item: "create:mechanical_mixer", type: "item" }
 				{ id: "7095053FA382C406", item: "create:encased_fan", type: "item" }
@@ -83,6 +95,10 @@
 			dependencies: ["46A784FDD3FEFE57"]
 			description: ["Production becomes a system when materials move without your inventory. Establish belts, chutes, and bulk storage between machines."]
 			id: "930E7AE8658209DC"
+			rewards: [
+				{ count: 8, id: "6D8CE271CC6ADE3B", item: "create:belt_connector", type: "item" }
+				{ count: 4, id: "10C6E5AE2B0A2F1D", item: "create:andesite_funnel", type: "item" }
+			]
 			tasks: [
 				{ id: "6F76D0A1B36F77AD", item: "create:belt_connector", type: "item" }
 				{ id: "3A31FE69F4A4B053", item: "create:chute", type: "item" }
@@ -102,6 +118,10 @@
 				"This is a real tier boundary: the workshop should already process and move materials before you cross it."
 			]
 			id: "9262C24E1341E10D"
+			rewards: [
+				{ count: 4, id: "E5B823FBBA20F3DC", item: "create:electron_tube", type: "item" }
+				{ count: 8, id: "B70656118F5E3C10", item: "minecraft:blaze_powder", type: "item" }
+			]
 			tasks: [
 				{ id: "B4DA220AD8582E91", item: "create:blaze_burner", type: "item" }
 				{ id: "197975472EAF4E43", item: "create:brass_casing", type: "item" }
@@ -114,6 +134,7 @@
 			dependencies: ["9262C24E1341E10D"]
 			description: ["Assemble a precision mechanism through sequenced assembly. It proves that the workshop can coordinate multiple operations rather than simply run isolated machines."]
 			id: "F2588FEA98D75143"
+			rewards: [{ id: "805140F8CB5DFAEC", item: "create:precision_mechanism", type: "item" }]
 			tasks: [{ id: "67EEB1B1F837D4D7", item: "create:precision_mechanism", type: "item" }]
 			title: "Sequenced Precision"
 			x: 6.0d
@@ -123,6 +144,7 @@
 			dependencies: ["F2588FEA98D75143"]
 			description: ["Deployers perform controlled player-like actions, while drills turn rotation into excavation. Build both before trying to automate the entire horizon."]
 			id: "7EA61FB4041AD8B5"
+			rewards: [{ count: 4, id: "44C949B1D7FB6C81", item: "create:super_glue", type: "item" }]
 			tasks: [
 				{ id: "F818499FC4F1B78F", item: "create:deployer", type: "item" }
 				{ id: "4A53D9124F00D1C1", item: "create:mechanical_drill", type: "item" }
@@ -141,6 +163,7 @@
 				"When this quest is complete, the homestead has become a mechanical works capable of supporting expansion beyond walking distance."
 			]
 			id: "128E339528F19614"
+			rewards: [{ count: 32, id: "DF88F25F0D048C39", item: "create:track", type: "item" }]
 			tasks: [
 				{ id: "6F76FCBDCF0132A8", item: "create:mechanical_crafter", type: "item" }
 				{ id: "CEFC2F9AFC44DD3A", title: "Automate a Repeated Component", type: "checkmark" }
