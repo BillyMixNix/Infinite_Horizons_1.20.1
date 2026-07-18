@@ -29,13 +29,6 @@
               "block": "minecraft:grass_block",
               "height": 1
             }
-          ],
-          "structure_overrides": [
-            "minecraft:mineshafts",
-            "minecraft:pillager_outposts",
-            "minecraft:ruined_portals",
-            "minecraft:strongholds",
-            "minecraft:villages"
           ]
         }
       }
