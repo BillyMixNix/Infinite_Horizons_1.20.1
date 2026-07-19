@@ -1,0 +1,143 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_logistics"
+	group: "511DB7CE6F25D05C"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "create:track"
+	id: "3A13791C54C5998E"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["128E339528F19614"]
+			description: [
+				"The plain is not empty space between useful places. Distance is the resource that makes infrastructure meaningful."
+				"Prepare a compass, map, and spyglass before choosing the first direction in which your territory will grow."
+			]
+			id: "330A41DCCAE63E57"
+			tasks: [
+				{ id: "5DEBCE094CA24506", item: "minecraft:compass", type: "item" }
+				{ id: "3260AB04187739A0", item: "minecraft:map", type: "item" }
+				{ id: "EE9D71C8B04001DB", item: "minecraft:spyglass", type: "item" }
+			]
+			title: "Read the Horizon"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["330A41DCCAE63E57"]
+			description: [
+				"Travel far enough that walking every load home would be annoying. Find a village, structure, future resource site, or major landmark worth connecting."
+				"Mark the route and return alive. The redesign will later replace this manual survey with deposit-aware prospecting."
+			]
+			id: "E1BCCCD016424781"
+			tasks: [{ id: "E36300264BE086C7", title: "Survey a Distant Site", type: "checkmark" }]
+			title: "Beyond the Homestead"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["E1BCCCD016424781"]
+			description: ["Establish a permanent outpost with shelter, light, local storage, food, and a way to process basic materials. An outpost is a working place, not a chest abandoned in a field."]
+			id: "A09206CBB7AEBED7"
+			tasks: [
+				{ id: "51880F3640F9640A", item: "minecraft:barrel", type: "item" }
+				{ id: "F4CA06BE604FE461", item: "minecraft:furnace", type: "item" }
+				{ id: "BC9FBD3D93EF2429", title: "Build and Light the Outpost", type: "checkmark" }
+			]
+			title: "A Second Light on the Plain"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A09206CBB7AEBED7"]
+			description: ["Build bulk freight storage and portable storage interfaces. Freight should enter and leave the train without the player carrying every stack by hand."]
+			id: "97BD384979DD1A3E"
+			tasks: [
+				{ id: "8DF30A6574C91C49", item: "create:item_vault", type: "item" }
+				{ id: "5D37BA4FFC7E2A65", item: "create:portable_storage_interface", type: "item" }
+			]
+			title: "Freight, Not Backpacks"
+			x: 3.0d
+			y: -0.75d
+		}
+		{
+			dependencies: ["97BD384979DD1A3E"]
+			description: [
+				"Lay track between the homestead and the outpost and install a station at each end. The route may be modest, but it must be permanent and readable."
+				"The first railway is required because later wireless systems should connect a territory you already built, not replace the act of building one."
+			]
+			id: "FD3F99F5133314FD"
+			tasks: [
+				{ count: 16L, id: "FDB0FCAE90EB3E6B", item: "create:track", type: "item" }
+				{ count: 2L, id: "30776AD75067BE29", item: "create:track_station", type: "item" }
+			]
+			title: "Lines Across the Plain"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["FD3F99F5133314FD"]
+			description: ["Assemble a train with controls and give it a schedule. A railway becomes infrastructure when it can run predictably rather than only when you manually improvise a trip."]
+			id: "A48E7B88D29979F5"
+			tasks: [
+				{ id: "B7FCC1D10B00681F", item: "create:controls", type: "item" }
+				{ id: "FE0985D75B0A3A6C", item: "create:schedule", type: "item" }
+			]
+			title: "A Train with a Job"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A48E7B88D29979F5"]
+			description: ["Load a meaningful shipment at the outpost, transport it by train, and unload it at the homestead. Building the train is not the milestone; making it carry the economy is."]
+			id: "D51BFA1F7866AA79"
+			tasks: [{ id: "E00EFE32D1443DB4", title: "Complete a Freight Delivery", type: "checkmark" }]
+			title: "The First Freight Run"
+			x: 6.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["A48E7B88D29979F5"]
+			description: ["Install signals before adding more trains or intersections. Capacity without control becomes a collision problem."]
+			id: "0EDF474B1C8C3D8E"
+			tasks: [{ id: "F373A2CAEF93D161", item: "create:track_signal", type: "item" }]
+			title: "Signals and Right of Way"
+			x: 6.0d
+			y: 0.75d
+		}
+		{
+			dependencies: ["D51BFA1F7866AA79"]
+			description: [
+				"Waystones may now connect the places you physically discovered and developed. They are for people and emergencies; bulk materials still deserve infrastructure."
+				"This quest is optional because the railway is the required accomplishment."
+			]
+			id: "94F0AE6CAFD854D2"
+			optional: true
+			size: 0.75d
+			tasks: [{ id: "62F6CD910F3B210B", item: "waystones:waystone", type: "item" }]
+			title: "Connect What You Built"
+			x: 7.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"D51BFA1F7866AA79"
+				"0EDF474B1C8C3D8E"
+			]
+			description: [
+				"Maintain the homestead, the outpost, and the rail connection between them. The world now contains more than a base: it contains the beginning of a territory."
+				"Electrical industry comes next because a distributed territory needs power, steel, fluids, and processing at a scale rotation alone should not provide."
+			]
+			id: "C183EEDB43A0E2B5"
+			tasks: [{ id: "EBA7ECDE5D399854", title: "Operate a Two-Site Territory", type: "checkmark" }]
+			title: "The Territory Begins"
+			x: 7.0d
+			y: 0.0d
+		}
+	]
+	title: "Act II — Lines Across the Plain"
+}

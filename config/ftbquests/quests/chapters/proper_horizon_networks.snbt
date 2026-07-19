@@ -1,0 +1,153 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_networks"
+	group: "511DB7CE6F25D05C"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "ae2:controller"
+	id: "6DA2514AD3F135E4"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1438522D85007BC2"]
+			description: [
+				"A digital network should organize an existing economy, not replace the need to build one. Begin by making local bulk storage dependable at the factory and outposts."
+				"Drawers and ordinary containers remain valuable as production buffers even after a terminal exists."
+			]
+			id: "7F8D5FE85503AAD3"
+			tasks: [
+				{ id: "FA5848F2415B92A7", item: "functionalstorage:oak_1", type: "item" }
+				{ id: "FBD72829EF51F87F", item: "minecraft:barrel", type: "item" }
+			]
+			title: "Storage at the Source"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7F8D5FE85503AAD3"]
+			description: ["Applied Energistics begins with charged Certus Quartz. Build a charger and establish a repeatable route to charged crystals before constructing the network itself."]
+			id: "063E49B2A8EEF4C5"
+			tasks: [
+				{ id: "16B46F2869CF6D6E", item: "ae2:charger", type: "item" }
+				{ id: "8D24074190BE1AE6", item: "ae2:charged_certus_quartz_crystal", type: "item" }
+			]
+			title: "Charge and Crystal"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["063E49B2A8EEF4C5"]
+			description: [
+				"Use an Inscriber to manufacture logic, calculation, and engineering processors. These are control components, so automate them before advanced storage consumes them in bulk."
+			]
+			id: "128FFED7092D5DD8"
+			tasks: [
+				{ id: "271AE74B7A6091F6", item: "ae2:inscriber", type: "item" }
+				{ id: "A0636F8673D8D3D1", item: "ae2:logic_processor", type: "item" }
+				{ id: "D866813332354298", item: "ae2:calculation_processor", type: "item" }
+				{ id: "ADD2F4C8572F4D0A", item: "ae2:engineering_processor", type: "item" }
+			]
+			title: "Processors, Not Trinkets"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["128FFED7092D5DD8"]
+			description: [
+				"Construct an ME Controller and Drive. The controller turns the storage system into infrastructure with power and channel constraints rather than a magic chest."
+				"Place the network in a central operations building with room to expand and service it."
+			]
+			id: "70D641D2E6D00DF3"
+			tasks: [
+				{ id: "91B28DD1AB1DF668", item: "ae2:controller", type: "item" }
+				{ id: "036D039BFE3FCEC9", item: "ae2:drive", type: "item" }
+			]
+			title: "The Operations Core"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["70D641D2E6D00DF3"]
+			description: ["Install a modest storage cell and terminal. Large cells are not a substitute for sensible bulk storage and subnet design; prove the network with a small cell first."]
+			id: "1BABB1C961DDCCA3"
+			tasks: [
+				{ id: "6F977BFD573DE483", item: { Count: 1, id: "ae2:item_storage_cell_1k", tag: { } }, type: "item" }
+				{ id: "C2CE570504031C97", item: "ae2:terminal", type: "item" }
+			]
+			title: "One Inventory, Deliberately"
+			x: 4.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["1BABB1C961DDCCA3"]
+			description: ["Upgrade the terminal for crafting and encode the first patterns. The network should save attention on repeated components, not make the player forget how production works."]
+			id: "9278CC9C4040E70B"
+			tasks: [
+				{ id: "073EBB4C85F93657", item: "ae2:crafting_terminal", type: "item" }
+				{ id: "0B2607CF9E68779B", item: "ae2:pattern_encoding_terminal", type: "item" }
+				{ id: "74C4DC807C7F9FB6", item: "ae2:blank_pattern", type: "item" }
+			]
+			title: "Teach the Network"
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["9278CC9C4040E70B"]
+			description: [
+				"Attach a Pattern Provider to a real machine line and autocraft one component with at least two processing steps."
+				"A recipe that only combines items in the terminal does not demonstrate factory integration."
+			]
+			id: "104A82095BF546B9"
+			tasks: [
+				{ id: "27A4DAB42DDCAA77", item: "ae2:pattern_provider", type: "item" }
+				{ id: "845926602CC08758", title: "Autocraft a Multi-Step Component", type: "checkmark" }
+			]
+			title: "The Factory Answers"
+			x: 6.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["104A82095BF546B9"]
+			description: [
+				"Wireless access is allowed after the central network and freight territory exist. It improves access inside developed space; it does not replace trains, outposts, or regional extraction."
+			]
+			id: "A6D768B08D7810B7"
+			tasks: [{ id: "30397223663C6DB2", item: "ae2:wireless_access_point", type: "item" }]
+			title: "Access Without Amnesia"
+			x: 6.0d
+			y: 0.75d
+		}
+		{
+			dependencies: ["70D641D2E6D00DF3"]
+			description: [
+				"Refined Storage remains available as an alternative network style, not a second mandatory campaign. Use it only if you prefer its tradeoffs or need compatibility with a particular facility."
+			]
+			id: "C970DDF0CC167C47"
+			optional: true
+			size: 0.75d
+			tasks: [{ id: "5B6FAA6F070A3968", item: "refinedstorage:controller", type: "item" }]
+			title: "An Alternate Network"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["104A82095BF546B9"]
+			description: [
+				"Connect production sites to the operations core while keeping local buffers and the railway useful. Add monitoring or routing logic where a process genuinely needs it."
+				"The act is complete when the territory can request, produce, store, and deliver materials without collapsing into one room of disconnected magic boxes."
+			]
+			id: "7CD7AE2645B669F4"
+			tasks: [
+				{ id: "59320AF41CF2BB25", title: "Connect a Remote Production Site", type: "checkmark" }
+				{ id: "C8EB05BDA0B7B267", title: "Keep Local Buffers and Freight Operational", type: "checkmark" }
+			]
+			title: "A Connected Territory"
+			x: 7.0d
+			y: 0.0d
+		}
+	]
+	title: "Act IV — A Connected Territory"
+}

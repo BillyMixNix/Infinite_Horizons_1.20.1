@@ -1,15 +1,13 @@
 
 [world-preset]
-	#Type in the name from the world type which should be selected by default.
-	world-preset = "minecraft:flat"
-	#Type in a valid generation setting for flat world type.
-	#Only works if world-type if 'minecraft:flat'.
-	flat-settings = "minecraft:bedrock,12*minecraft:dirt,minecraft:grass_block;minecraft:plains"
-	#Type in a valid biome for single biome world type.
-	#Only works if world-type is 'minecraft:single_biome_surface'.
+	# Proper Infinite Horizons uses a data-driven flat preset with real geological depth,
+	# biome features, ore placement, and selected structures.
+	world-preset = "proper_horizon:deep_flat"
+	# This legacy string is unused while the custom preset above is selected.
+	flat-settings = "minecraft:bedrock,64*minecraft:deepslate,60*minecraft:stone,4*minecraft:dirt,minecraft:grass_block;minecraft:plains"
+	# Only used by minecraft:single_biome_surface.
 	single-biome-biome = "minecraft:plains"
-	#Disables the preset selection button in the world selection screen.
+	# Keep the selector available during development so testers can compare presets.
 	disable-button = false
-	#The list of world types which should be available in the world selection screen. If empty, all world types are available.
+	# If empty, all registered world types remain available.
 	allowed-world-types = []
-

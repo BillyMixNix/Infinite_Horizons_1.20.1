@@ -1,0 +1,75 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_orientation"
+	group: "511DB7CE6F25D05C"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "minecraft:writable_book"
+	id: "7D3B3D7200CC680C"
+	order_index: -100
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Proper Infinite Horizons is a redesign, not an official update from the original author. The stable mod platform and compatibility work are inherited; progression, world generation, balance, and quests are being rebuilt in this fork."
+				"This branch is under active validation. Use a fresh world and expect balance changes before release."
+			]
+			id: "544D135B598F68AD"
+			tasks: [{ id: "FB01751A5DA6D496", title: "I Understand This Is a Development Build", type: "checkmark" }]
+			title: "What You Are Playing"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["544D135B598F68AD"]
+			description: [
+				"The Proper Horizon Campaign is the only loaded progression path. Follow Acts 0 through V in order."
+				"The inherited Alpha/Beta chapters and reward-heavy mod catalogues were removed from the live questbook because they contradicted the new sequence and allowed progression bypasses. Their source remains preserved in Git history."
+			]
+			id: "B3A99DB52D3C7A81"
+			tasks: [{ id: "B5ECDA8E697C1A58", title: "Use the Proper Horizon Campaign", type: "checkmark" }]
+			title: "One Authoritative Campaign"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["B3A99DB52D3C7A81"]
+			description: [
+				"Create worlds with the Proper Horizon: Deep Flat preset. It keeps the level horizon but adds deep stone and deepslate geology, biome features, ores, and selected structures."
+				"Existing shallow-flat worlds will not gain new underground layers in chunks that already exist. Treat the worldgen redesign as new-save content until migration is explicitly validated."
+			]
+			id: "7E27E8570432152A"
+			tasks: [{ id: "10B2D06F6B3E347C", title: "Use the Deep Flat Preset", type: "checkmark" }]
+			title: "Flat Is Not Empty"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7E27E8570432152A"]
+			description: [
+				"Mine common resources, develop distant sites, and move bulk materials through infrastructure. Sifting is now slow trace recovery and early bootstrap support, not the primary ore economy."
+				"Automation follows understanding: find a material, process it, build with it, then automate it. Machines that erase surveying or logistics remain disabled or late until their progression role is proven."
+			]
+			id: "49439B086D293680"
+			tasks: [{ id: "EE9B1A98A8FD2D8A", title: "Build Outward, Not Only Upward", type: "checkmark" }]
+			title: "How the Economy Works"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["49439B086D293680"]
+			description: [
+				"When testing, report the exact quest, recipe, item, structure, or world seed involved. A useful report says what you tried, what happened, and what you expected."
+				"Do not quietly work around a mandatory dead end. A route that only succeeds because an experienced player guessed an undocumented interaction is a redesign bug."
+			]
+			id: "FC030087644DF41D"
+			tasks: [{ id: "E2F3A59B2916B230", title: "Report Dead Ends Instead of Hiding Them", type: "checkmark" }]
+			title: "How to Test This Pack"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "Read This First"
+}

@@ -1,0 +1,127 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "proper_horizon_projects"
+	group: "E2C2E5D235077830"
+	hide_quest_details_until_startable: false
+	hide_quest_until_deps_complete: false
+	hide_quest_until_deps_visible: false
+	icon: "minecraft:filled_map"
+	id: "598993E4C6E7D8A1"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Optional systems are judged by what they add to the territory, not by whether every item in a mod has been crafted."
+				"Complete the projects that fit your world. None of these replaces the six-act campaign."
+			]
+			id: "3AD4F3711C8A7F04"
+			tasks: [{ id: "EB9BDB266614C174", title: "Choose a Project", type: "checkmark" }]
+			title: "Projects, Not Catalogues"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3AD4F3711C8A7F04"]
+			description: [
+				"Use Farmer's Delight, Cooking for Blockheads, Pam's HarvestCraft, or related food systems to create a functioning kitchen and supply chain."
+				"The project is complete when the kitchen can provide several repeatable meals to workers, travelers, or a settlement without depending on random loot."
+			]
+			id: "2B79F5F9D9E3CFF5"
+			optional: true
+			tasks: [{ id: "DC87E14F30DEFE44", title: "Operate a Provisioning Kitchen", type: "checkmark" }]
+			title: "Provision the Territory"
+			x: 1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3AD4F3711C8A7F04"]
+			description: [
+				"Found a MineColonies settlement or build an equivalent inhabited district. Connect it to food, materials, transportation, and protection."
+				"A town is infrastructure with people in it, not a decorative cluster of empty buildings."
+			]
+			id: "6724298E4201052A"
+			optional: true
+			tasks: [{ id: "37E2555179DD66A3", title: "Establish and Supply a Settlement", type: "checkmark" }]
+			title: "A Place for People"
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3AD4F3711C8A7F04"]
+			description: [
+				"Choose a magical discipline—such as Ars Nouveau, Botania, Nature's Aura, Occultism, Blood Magic, Forbidden & Arcanus, or Iron's Spells—and construct a dedicated research site."
+				"Demonstrate one capability that complements the territory: specialized transport, material processing, defense, construction, or exploration."
+			]
+			id: "7EFB16A5E1B823C4"
+			optional: true
+			tasks: [
+				{ id: "DBB8E67B6F802AE8", title: "Build an Arcane Research Site", type: "checkmark" }
+				{ id: "B2449A494B7A92DB", title: "Integrate One Useful Arcane Capability", type: "checkmark" }
+			]
+			title: "Another Way to Understand the World"
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3AD4F3711C8A7F04"]
+			description: [
+				"Study and automate a hostile resource using Hostile Neural Networks, Mob Grinding Utilities, or Industrial Foregoing."
+				"Encounter the creature and establish safe containment before replacing it with a simulation or automated farm."
+			]
+			id: "EFDB69035CF27618"
+			optional: true
+			tasks: [
+				{ id: "3C3023FCE77FEE56", title: "Study the Target Creature", type: "checkmark" }
+				{ id: "D188B15195D80788", title: "Operate a Controlled Mob Resource Facility", type: "checkmark" }
+			]
+			title: "Controlled Hostile Resources"
+			x: 1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3AD4F3711C8A7F04"]
+			description: [
+				"Build a Botany Pots district or conventional greenhouse that automates plants already discovered and cultivated normally."
+				"Automation may improve agriculture; it should not conjure an unknown resource crop into existence."
+			]
+			id: "9A4940787605BA60"
+			optional: true
+			tasks: [{ id: "6B663FD3F8B1C9D1", title: "Operate an Automated Greenhouse", type: "checkmark" }]
+			title: "The Greenhouse District"
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3AD4F3711C8A7F04"]
+			description: [
+				"After reaching ultimate control circuits and obtaining a Nether Star, unlock resource crops or advanced resource bees."
+				"Use them to stabilize supply of a material your territory has already discovered, mined, transported, and processed. Do not use the first renewable system to erase the need for every regional site."
+			]
+			id: "E4B3A16D3FE7BB68"
+			optional: true
+			tasks: [
+				{ id: "8AF37941FF1D464A", item: "mysticalagriculture:prosperity_seed_base", type: "item" }
+				{ id: "9E60E6B52DD68661", item: "productivebees:advanced_oak_beehive", type: "item" }
+			]
+			title: "Renewable, After Discovery"
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3AD4F3711C8A7F04"]
+			description: [
+				"Travel beyond the protected homestead after dark. Establish temporary light, defend the route, and return with a useful discovery or resource."
+				"Night should become a frontier condition you can prepare for, not a screen you are required to skip."
+			]
+			id: "1E5D0874DBE2A474"
+			optional: true
+			tasks: [{ id: "1E66D0C0DA878D48", title: "Complete a Night Expedition", type: "checkmark" }]
+			title: "Lights Beyond the Safe Zone"
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+	title: "Optional Systems and Projects"
+}

@@ -1,0 +1,4 @@
+# Copy the relevant settings into the dedicated server's server.properties
+# before generating the world for the first time.
+level-type=proper_horizon:deep_flat
+generate-structures=true

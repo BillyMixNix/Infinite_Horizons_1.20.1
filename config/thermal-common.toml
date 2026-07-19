@@ -4,8 +4,9 @@
 	[World.Features]
 
 		[World.Features."Oil Sand"]
-			#Whether this feature should naturally spawn in the world.
-			Enable = true
+			# Proper Infinite Horizons: oil is a regional industrial resource, not background terrain.
+			# Keep Thermal oil sand disabled until an authored regional deposit replaces it.
+			Enable = false
 
 		[World.Features.Silver]
 			#Whether this feature should naturally spawn in the world.
@@ -38,4 +39,3 @@
 		[World.Features.Niter]
 			#Whether this feature should naturally spawn in the world.
 			Enable = true
-

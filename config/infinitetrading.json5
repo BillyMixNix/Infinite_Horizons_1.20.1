@@ -1,6 +1,7 @@
 {
-	// When enabled, the trades of the wandering trader will never lock up.
+	// Wandering traders retain ordinary limited stock.
 	"wanderingTraderInfiniteTrades": false,
-	// When enabled, the trades of villagers will never lock up.
-	"villagerInfiniteTrades": true
+	// Villager trades must restock normally so settlements remain an economy,
+	// not an infinite material vending machine.
+	"villagerInfiniteTrades": false
 }
