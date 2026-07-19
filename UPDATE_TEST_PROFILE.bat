@@ -37,6 +37,15 @@ if errorlevel 1 (
 )
 
 echo.
+echo Disabling development-only mods in the playtest profile...
+for %%F in ("%PROFILE%\mods\probejs*.jar") do (
+    if exist "%%~fF" (
+        ren "%%~fF" "%%~nxF.disabled"
+        echo Disabled %%~nxF
+    )
+)
+
+echo.
 echo Removing stale quest definitions and scripts...
 if exist "%PROFILE%\config\ftbquests" rmdir /S /Q "%PROFILE%\config\ftbquests"
 if exist "%PROFILE%\kubejs" rmdir /S /Q "%PROFILE%\kubejs"
@@ -62,6 +71,7 @@ if %KUBEJS_RESULT% GEQ 8 (
 
 echo.
 echo Update complete.
+echo ProbeJS is disabled in the playtest profile so it cannot dump developer docs on world join.
 echo The old quest chapters were removed before the new campaign was copied.
 echo Launch the duplicated Proper Infinite Horizons profile from CurseForge.
 pause
